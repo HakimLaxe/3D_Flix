@@ -1,0 +1,13 @@
+.background-header {
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.background-header-img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
