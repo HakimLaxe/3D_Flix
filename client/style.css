@@ -1,19 +1,80 @@
+body {font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif}
+a {text-decoration: none; color: black;}
+
 .header {
-    position: absolute;
-    font-size: 20px;
-    pointer-events: fill;
-    z-index: 10;
-}
-.background-header {
-    position: absolute;
-
-    pointer-events: none;
-    top: 0; left: 0; right: 0;
-}
-
-.background-header-img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
     position: relative;
+    box-sizing: inherit;
+    z-index: 10;
+    padding: 1rem 1rem;
+}
+
+.header-navbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.header-navbar-start {
+    padding-right: 1rem;
+    margin-right: 0;
+    flex: 1;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+
+.header-navbar-logo {
+    box-sizing: inherit;
+    display: block;
+}
+
+.logo{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.header-navbar-middle {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+   justify-content: center;
+   display: flex;
+   flex-wrap: wrap;
+   margin: 0;
+   padding: 0;
+   list-style: none; 
+   margin-block-start: 1rem;
+   margin-block-end: 1rem;
+   padding-inline-start: 40px;
+   gap: 70px;
+   font-size: 20px;
+}
+
+.header-navbar-end {
+    padding-left: 1 rem;
+    flex: 1;
+    position: relative;
+    z-index: 2;
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+}
+
+.menu-button {
+    padding: 0.25rem 0.56rem;
+    white-space: nowrap;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    position: relative;
+    align-items: flex-start;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
 }
