@@ -72,13 +72,11 @@ a {text-decoration: none; color: black;}
     overflow: hidden;
     width: 100%;
     height: 600px;
-    /* background-image: url(images/Materiale\ Sito\ web/DEF_sfondo.jpg); */
-    
+    background-image: url(images/Materiale\ Sito\ web/DEF_sfondo.jpg);
+
 }
 
-.background-image {
-    width: 400px; height: 300px;
-}
+.background-image { width: 400px; height: 300px; }
 
 .wrapper {
     padding-top: 300px;
@@ -127,4 +125,8 @@ a {text-decoration: none; color: black;}
     justify-content: flex-start;
     margin-left: 17px;
     box-sizing: content-box;
+}
+
+.home-page{
+    background-color: #f4f4f4;
 }
