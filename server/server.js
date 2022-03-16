@@ -22,8 +22,8 @@ var con = mysql.createConnection({
   });
   
 con.connect(function(err) {
-    if (err) console.log("Cannot establish a connection with Database");
-    else console.log("Connected!");
-  });
+    if (err) console.log("Cannot establish a connection with the Database");
+    else console.log("Connected to the Database!");
+  })
 
 app.listen(port, ()=>console.log(`Server running on http://localhost:${port}/`));
