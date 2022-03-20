@@ -44,7 +44,7 @@ a:hover {color: black;}
     align-items: center;
 }
 
-.menu {
+.header-menu {
    justify-content: center;
    display: flex;
    flex-wrap: wrap;
@@ -125,7 +125,7 @@ a:hover {color: black;}
 
 .home-page {
     background-color: #f4f4f4;
-    display: flex;
+    display: block;
     margin-top: 55px;
 }
 
@@ -181,11 +181,12 @@ a:hover {color: black;}
     display: block;
 }
 
-/*.one-img {
+.one-img {
     margin-left: auto;
     margin-right: auto;
     display: table;
     margin: 0;
+    align-content: center;
 }
 
 .two-img {
@@ -200,7 +201,7 @@ a:hover {color: black;}
     margin-right: auto;
     display: table;
     margin: 0;
-}*/
+}
 
 .section-h {
     margin-bottom: 1rem;
@@ -208,3 +209,96 @@ a:hover {color: black;}
     font-style: normal;
     text-align: center;
 }
+
+.section-newsletter {
+    background-color: white;
+    width: 85%; height: 400px;
+    display: block;
+    position: relative;
+    align-content: center;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.newsletter-container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    box-sizing: inherit;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.newsletter-columns {
+    margin-bottom: 0;
+    flex-wrap: nowrap;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.newsletter-column1 {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.newsletter-column2 {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.column-h {
+    margin-bottom: 1rem;
+    margin-top: 0;
+    text-align: center;
+    font-size: 30px;
+}
+
+.column-p {
+    padding-top: 1rem;
+    text-align: center;
+    font-weight: 400;
+}
+
+.footer {
+    flex-wrap: nowrap;
+    padding: 1.5rem 0;
+    box-sizing: inherit;
+    display: flex;
+    position: relative;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    width: 100%;
+}
+
+.footer-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 70px;
+    width: 100%;
+}
+
+.footer-navbar-logo {
+    box-sizing: inherit;
+    display: block;
+}
+
+.footer-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 50px;
+}
+
+.social-icons {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
