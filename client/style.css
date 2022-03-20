@@ -1,5 +1,8 @@
 body {font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif}
+
 a {text-decoration: none; color: black;}
+
+a:hover {color: black;}
 
 .header {
     position: relative;
@@ -41,7 +44,7 @@ a {text-decoration: none; color: black;}
     align-items: center;
 }
 
-.menu {
+.header-menu {
    justify-content: center;
    display: flex;
    flex-wrap: wrap;
@@ -68,10 +71,12 @@ a {text-decoration: none; color: black;}
 
 .background {
     position: absolute;
-    right: 0; left: 0;
+    right: 0; left: 0; top: 0;
     overflow: hidden;
-    width: 100%; height: 600px;
-
+    width: 100%; height: 580px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
 }
 
 .wrapper {
@@ -85,7 +90,7 @@ a {text-decoration: none; color: black;}
     position: relative;
 }
 
-.wrapper-content {padding-top: 300px;}
+.wrapper-content {padding-top: 280px;}
 
 .title {
     font-size: 40px;
@@ -107,12 +112,11 @@ a {text-decoration: none; color: black;}
     display: inline-block;
     cursor: pointer;
     border: none;
-    background-color: transparent;
     position: relative;
     align-items: flex-start;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 18px;
-    background-color: limegreen;
+    background-color: #eef138b6;
     border-radius: 7px;
     justify-content: flex-start;
     margin-left: 20px;
@@ -121,4 +125,180 @@ a {text-decoration: none; color: black;}
 
 .home-page {
     background-color: #f4f4f4;
+    display: block;
+    margin-top: 55px;
 }
+
+.section-one {
+    background-color: white;
+    width: 85%; height: 390px;
+    margin: auto; display: block; position: relative;
+    align-content: center;
+    padding: 4rem;
+}
+
+.section-columns {
+    margin-bottom: 2rem;
+    flex-wrap: nowrap;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.section-one-content {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.section-two-content {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.section-three-content {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.section-one-img {
+    margin: 0 0 1rem;
+    margin-bottom: 2rem;
+    box-sizing: inherit;
+    display: block;
+}
+
+.section-two-img {
+    margin: 0 0 1rem;
+    margin-bottom: 2rem;
+    box-sizing: inherit;
+    display: block;
+}
+
+.section-three-img {
+    margin: 0 0 1rem;
+    margin-bottom: 2rem;
+    box-sizing: inherit;
+    display: block;
+}
+
+.one-img {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+    margin: 0;
+    align-content: center;
+}
+
+.two-img {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+    margin: 0;
+}
+
+.three-img {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+    margin: 0;
+}
+
+.section-h {
+    margin-bottom: 1rem;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+.section-newsletter {
+    background-color: white;
+    width: 85%; height: 400px;
+    display: block;
+    position: relative;
+    align-content: center;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.newsletter-container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    box-sizing: inherit;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.newsletter-columns {
+    margin-bottom: 0;
+    flex-wrap: nowrap;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.newsletter-column1 {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.newsletter-column2 {
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.column-h {
+    margin-bottom: 1rem;
+    margin-top: 0;
+    text-align: center;
+    font-size: 30px;
+}
+
+.column-p {
+    padding-top: 1rem;
+    text-align: center;
+    font-weight: 400;
+}
+
+.footer {
+    flex-wrap: nowrap;
+    padding: 1.5rem 0;
+    box-sizing: inherit;
+    display: flex;
+    position: relative;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    width: 100%;
+}
+
+.footer-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 70px;
+    width: 100%;
+}
+
+.footer-navbar-logo {
+    box-sizing: inherit;
+    display: block;
+}
+
+.footer-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 50px;
+}
+
+.social-icons {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 30px;
+}
+

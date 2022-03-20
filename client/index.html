@@ -1,6 +1,7 @@
 <!DOCTYPE html>
     <head>
         <title>3DFlix - Home</title>
+        <link href="images/Materiale Sito web/IconaSito.png">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
@@ -19,7 +20,7 @@
                     </div>
                 </div>
                 <div class="header-navbar-middle">
-                    <ul class="menu">
+                    <ul class="header-menu">
                         <li><a href="">Maker/Stampanti</a> <! Fare pagina Maker/Stampanti> </li>
                         <li><a href="">Blog</a> <! Fare pagina Blog> </li>
                         <li><a href="">Chi Siamo</a> <! Fare pagina Chi Siamo> </li>
@@ -27,19 +28,21 @@
                 </div>
                 <div class="header-navbar-end">
                     <div>
-                        <button style="padding-right: 20px" id="loginButton" 
-                                class="btn btn-primary dropdown-toggle" 
-                                data-bs-toggle="dropdown" 
-                                aria-expanded="false"> Accedi  
+                        <button style="padding-right: 20px; background-color: transparent; 
+                            border-color: transparent; color: black; font-size: 20px;" 
+                            id="loginButton" class="btn btn-primary dropdown-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false"> Accedi  
                         </button>
                         <div class="dropdown-menu">
                             <input type="text" name="username" placeholder="Username" required>
                             <input type="password" name="password" placeholder="Password" required>
                             <input type="submit" value="Login">
                         </div>
-                        <button id="siginButton" class="btn btn-primary dropdown-toggle"
-                                data-bs-toggle="dropdown" 
-                                aria-expanded="false"> Registrati 
+                        <button style="background-color: transparent; 
+                            border-color: transparent; color: black; font-size: 20px;"
+                            id="siginButton" class="btn btn-primary dropdown-toggle"
+                            data-bs-toggle="dropdown" 
+                            aria-expanded="false"> Registrati 
                         </button>
                         <div class="dropdown-menu">
                             <input type="text" name="username" placeholder="Username" required>
@@ -70,8 +73,81 @@
         </div>
 
     <div class="home-page">
-            
+
+        <div class="section-one">
+            <div class="section-columns">
+                <div class="section-one-content">
+                    <div class="section-one-img">
+                        <figure class="one-img">
+                            <img src="images/Materiale Sito web/SEARCH V3.png" style="width: 150px; height: 150px;">
+                        </figure>
+                    </div>
+                    <h3 class="section-h"> Cerca uno stampatore </h3>
+                    <p class="section-h"> Scegli lo stampatore che fa per te </p>
+                </div>
+                <div class="section-two-content">
+                    <div class="section-two-img">
+                        <figure class="two-img">
+                            <img src="images/Materiale Sito web/CONTATTA V2.png" style="width: 200px; height: 150px;">
+                        </figure>
+                    </div>
+                    <h3 class="section-h"> Contattalo </h3>
+                    <p class="section-h"> Decidi e progetta la tua creazione </p>
+                </div>
+                <div class="section-three-content">
+                    <div class="section-three-img">
+                        <figure class="three-img">
+                            <img src="images/Materiale Sito web/SHIP V3.png" style="width: 100px; height: 150px;">
+                        </figure>
+                    </div>
+                    <h3 class="section-h"> Ricevi le tue stampe! </h3>
+                    <p class="section-h"> Rilassati e aspetta la consegna! </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-newsletter">
+            <div class="newsletter-container">
+                <div class="newsletter-colums">
+                    <div class="newsletter-column1">
+                        <div class="newsletter-columns">
+                            <div class="newsletter-column1">
+                                <h2 class="column-h"> Iscriviti alla nostra newsletter! </h2>
+                                <p class="column-p"> Rimani aggiornato su 3DFlix e ricevi contenuti mensili esclusivi 
+                                    <br> pensati per tutti i Makers
+                                </p>
+                            </div>
+                            <div class="newsletter-column2">
+                                <h2 class="column-h"> SIUM </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+    <footer class="footer">
+        <div class="footer-navbar">
+            <div class="footer-navbar-logo">
+                <a href="index.html"><img width="180" class="logo" 
+                    src="images/Materiale Sito web/HEADER_Tavola disegno 1.png"></a>
+            </div>
+            <ul class="footer-menu">
+                <li><a href=""> Termini e Condizioni</a> <! Fare pagina Termini e Condizioni> </li>
+                <li><a href=""> Privacy e Policy</a> <! Fare pagina Privacy e Policy> </li>
+                <li><a href=""> Faq</a> <! Fare pagina Faq> </li>
+            </ul>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/3dflix3d/"> <img src="images/Materiale Sito web/Facebook_logo.png"
+                    style="width: 40px; height: auto;"> </a>
+                <a href="https://www.instagram.com/3d_flix/"> <img src="images/Materiale Sito web/Instagram_logo.png"
+                    style="width: 40px; height: auto;"> </a>
+                <a href="https://www.tiktok.com/3d_flix/"> <img src="images/Materiale Sito web/Tiktok_logo.png"
+                    style="width: 40px; height: auto;"> </a>
+            </div>
+        </div>
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" 
                 integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" 
