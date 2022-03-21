@@ -185,7 +185,6 @@ a:hover {color: black;}
     margin-left: auto;
     margin-right: auto;
     display: table;
-    margin: 0;
     align-content: center;
 }
 
@@ -193,14 +192,14 @@ a:hover {color: black;}
     margin-left: auto;
     margin-right: auto;
     display: table;
-    margin: 0;
+    align-content: center;
 }
 
 .three-img {
     margin-left: auto;
     margin-right: auto;
     display: table;
-    margin: 0;
+    align-content: center;
 }
 
 .section-h {
@@ -209,6 +208,138 @@ a:hover {color: black;}
     font-style: normal;
     text-align: center;
 }
+
+.stamp-list {
+    padding-top: 2rem;
+    margin: auto;
+    display: block;
+    position: relative;
+    width: 85%;
+    align-content: center;
+    box-sizing: border-box;
+}
+
+.stamp-list-row {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 1 auto;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    justify-content: space-between;
+}
+
+.list-row-element {
+    margin-bottom: 2rem;
+}
+
+.element-block {
+    border-radius: 5px;
+    box-shadow: 0 5px 30px rgb(7 6 36 86 / 8%);
+    background-color: white;
+    transition: transform 0.25s;
+}
+
+.element-header {
+    margin-bottom: 0;
+    position: relative;
+}
+
+.element-img {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.element-content {
+    margin-bottom: 0;
+    padding: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.content-topbar {
+    border-radius: 5px;
+    box-shadow: 0 5px 30px rgb(7 6 36 86 / 8%);
+    background-color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: -3.25rem 0 1.25rem;
+    padding: 0.625rem 1rem;
+}
+
+.vendor-info {
+    display: flex;
+    align-items: center;
+}
+
+.vendor-info-img {
+    flex: 0 0 2.1875rem;
+    margin-right: 0.75rem;
+}
+
+.vendor-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.vendor-name {
+    font-size: 0.875rem;
+    white-space: nowrap;
+    margin: 0;
+    word-wrap: break-word;
+}
+
+.content-middle {
+    margin: 0;
+    word-wrap: break-word;
+}
+
+.content-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgba(7, 36, 86, 0.075rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-attributes-primary {
+    margin-right: 1rem;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+}
+
+.attribute-provincia {
+    font-size: 1.25rem;
+    min-width: 0;
+    word-wrap: break-word;
+}
+
+.footer-attributes-secondary {
+    display: flex;
+    align-items: center;
+}
+
+.attribute-message {
+    display: none;
+    width: 380px;
+}
+
+/*.hp-icon--fas--fa-comment {
+    
+}
+
+.hp-icon--fas--fa-heart {
+
+}*/
 
 .section-newsletter {
     background-color: rgb(204, 204, 204);
