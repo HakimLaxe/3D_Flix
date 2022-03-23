@@ -9,8 +9,9 @@
               integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
               crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
+    
     <body>
         <div class="header">
             <div class="header-navbar">
@@ -27,6 +28,7 @@
                         <li><a href="">Chi Siamo</a> <! Fare pagina Chi Siamo> </li>
                     </ul>
                 </div>
+                
                 <div class="header-navbar-end">
                     <div>
                         <button style="padding-right: 20px; background-color: transparent; 
@@ -35,22 +37,42 @@
                             data-bs-toggle="dropdown" aria-expanded="false"> Accedi  
                         </button>
                         <div class="dropdown-menu">
-                            <input type="text" name="username" placeholder="Username" required>
-                            <input type="password" name="password" placeholder="Password" required>
+                            <input type="text" name="username" placeholder="Username" required><br><br>
+                            <input type="password" name="password" placeholder="Password" required><br><br>
                             <input type="submit" value="Login">
                         </div>
+
                         <button style="background-color: transparent; 
                             border-color: transparent; color: black; font-size: 20px;"
-                            id="siginButton" class="btn btn-primary dropdown-toggle"
-                            data-bs-toggle="dropdown" 
+                            id="siginButton" class="btn btn-primary"
+                            data-bs-toggle="modal" data-bs-target="#siginModal"
                             aria-expanded="false"> Registrati 
                         </button>
-                        <div class="dropdown-menu">
-                            <input type="text" name="username" placeholder="Username" required>
-                            <input type="password" name="password" placeholder="Password" required>
-                            <input type="submit" value="Login">
-                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="siginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Registrati</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <label for="fname">First name:</label>
+                                    <input type="text" id="fname" name="fname"><br><br>
+                                    <label for="lname">Last name:</label>
+                                    <input type="text" id="lname" name="lname"><br><br>
+                                    <input type="submit" value="Submit">                                
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>        
+
                     </div>
+
                 </div>
             </div>
         </div>
