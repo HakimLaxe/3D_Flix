@@ -4,6 +4,19 @@ a {text-decoration: none; color: black;}
 
 a:hover {color: black;}
 
+.dropdown-content {
+    width: auto;
+    box-sizing: border-box;
+    margin: 1rem 1rem;
+}
+
+.dropdown-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
 .modal-backdrop {
     z-index: 1;
 }
@@ -16,7 +29,7 @@ a:hover {color: black;}
 
 .modal-body {
     box-sizing: border-box;
-    margin: 2rem 2rem;
+    margin: 0.5rem 0.5rem;
 }
 
 .modal-box {
@@ -29,6 +42,12 @@ a:hover {color: black;}
     align-items: center;
     justify-content: space-around;
     margin-bottom: 1rem;
+}
+
+.modal-row-alt {
+    margin-left: 2rem;
+    display: flex;
+    justify-content: left;
 }
 
 .header {

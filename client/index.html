@@ -37,9 +37,22 @@
                             data-bs-toggle="dropdown" aria-expanded="false"> Accedi  
                         </button>
                         <div class="dropdown-menu">
-                            <input type="text" id="loginUsername" name="logusername" placeholder="Username" required><br><br>
-                            <input type="password" id="loginPassword" name="logpassword" placeholder="Password" required><br><br>
-                            <input type="submit" id="loginSubmit" value="Login">
+                            <div class="dropdown-content">
+                                <div class="dropdown-row">
+                                    <div style="margin-right: 2rem ;">
+                                        <label for="loginUsername"> Username </label><br>
+                                        <input type="text" id="loginUsername" name="log-username" required class="modal-box" size="15">
+                                    </div>
+                                    <div>
+                                        <label for="loginPassword"> Password </label><br>
+                                        <input type="password" id="loginPassword" name="log-password" required class="modal-box" size="15">
+                                    </div>
+                                </div>
+                                <div class="dropdown-row">
+                                    <input type="submit" id="loginSubmit" value="Accedi" class="button-form">
+                                    <a href=""> Hai dimenticato la password? </a>
+                                </div>
+                            </div>
                         </div>
 
                         <button style="background-color: transparent; 
@@ -65,48 +78,60 @@
                                     <div class="modal-row">
                                         <div>
                                             <label for="signName"> Nome </label><br>
-                                            <input type="text" id="signName" name="signname" class="modal-box" size="15">
+                                            <input type="text" required id="signName" name="sign-name" class="modal-box" size="15">
                                         </div>
                                         <div>
                                             <label for="signSurname"> Cognome </label><br>
-                                            <input type="text" id="signSurname" name="signsurname" class="modal-box" size="15">
+                                            <input type="text" required id="signSurname" name="sign-surname" class="modal-box" size="15">
                                         </div>
                                     </div>
                                     <div class="modal-row">
                                         <div>
                                             <label for="signEmail"> Email </label> <br>
-                                        <input type="text" id="signEmail" name="signemail" class="modal-box" size="15">
+                                        <input type="text" required id="signEmail" name="sign-email" class="modal-box" size="15">
                                         </div>
                                         <div>
                                             <label for="signUsername"> Username </label> <br>
-                                        <input type="text" id="signUsername" name="signusername" class="modal-box" size="15">
+                                        <input type="text" required id="signUsername" name="sign-username" class="modal-box" size="15">
                                         </div>
                                     </div>
                                     <div class="modal-row">
                                         <div>
                                             <label for="signPassword"> Password </label> <br>
-                                            <input type="password" id="signPassword" name="signpassword" class="modal-box" size="15">
+                                            <input type="password" required id="signPassword" name="sign-password" class="modal-box" size="15">
                                         </div>
                                         <div>
                                             <label for="signRePassword"> Reinserisci Password </label> <br>
-                                            <input type="password" id="signRePassword" name="signrepassword" class="modal-box" size="15">
+                                            <input type="password" required id="signRePassword" name="sign-repassword" class="modal-box" size="15">
                                         </div>  
                                     </div>
                                     <div class="modal-row">
                                         <div>
                                             <label for="signCity"> Città </label> <br>
-                                            <input type="" id="signCity" name="signcity" class="modal-box" size="15">
+                                            <input type="text" required id="signCity" name="sign-city" class="modal-box" size="15">
                                         </div>
                                         <div>
                                             <label for="signProvince"> Provincia </label> <br>
+                                            <input type="text" required id="signProvince" name="sign-province" class="modal-box" size="15">
+                                            <!--<label for="signProvince"> Provincia </label> <br>
                                             <form autocomplete="off" action="/action_page.php">
                                                 <div class="autocomplete">
                                                   <input id="signProvince" type="text" name="signprovince" class="modal-box" size="15">
                                                 </div>
-                                              </form>
-                                              <!--<label for="signProvince"> Provincia </label> <br>
-                                                <input type="" id="signProvince" name="signprovince" class="modal-box" size="15">-->
+                                              </form>-->
                                         </div>  
+                                    </div>
+                                    <div class="modal-row-alt" style="margin-bottom: 0.5rem;">
+                                        <label>
+                                            <input type="checkbox" name="agree-terms" value="1" required class="checkmark-form">
+                                            <a href=""> Ho letto e accetto i termini e le condizioni </a>
+                                        </label>
+                                    </div>
+                                    <div class="modal-row-alt">
+                                        <label>
+                                            <input type="checkbox" name="agree-newsletter" value="1" class="checkmark-form">
+                                            <a href=""> Iscriviti alla Newsletter </a>
+                                    </p> </label>
                                     </div>
                                     <div class="modal-row">
                                         <input type="submit" value="Registrati" class="button-form">
