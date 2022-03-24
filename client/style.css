@@ -4,6 +4,9 @@ a {text-decoration: none; color: black;}
 
 a:hover {color: black;}
 
+.modal-backdrop {
+    z-index: 1;
+}
 .header {
     position: relative;
     box-sizing: inherit;
