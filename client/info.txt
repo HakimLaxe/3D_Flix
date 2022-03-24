@@ -9,3 +9,5 @@ Implementare controllo "Accesso effettuato" sulle icone nei box delle stampanti 
 Implementare lato server aggiunta delle informazioni nei box nella sezione "Stampanti" man mano che vengono pubblicati annunci,
 a quanto ho capito deve essere così, una sorta di "lista degli ultimi aggiunti" (riga 110 index.html).
 Devo finire di completare i box degli annunci quindi per ora si può tralasciare.
+
+le righe di codice si sono spostate quindi gg per info.txt
