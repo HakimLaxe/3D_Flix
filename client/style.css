@@ -257,7 +257,7 @@ a:hover {color: black;}
 }
 
 .stamp-list {
-    padding-top: 2rem;
+    padding-top: 4rem;
     margin: auto;
     display: block;
     position: relative;
@@ -378,6 +378,38 @@ a:hover {color: black;}
 .attribute-message {
     display: none;
     width: 380px;
+}
+
+.section-typestamp {
+    width: 85%; height: auto;
+    display: block;
+    position: relative;
+    align-content: center;
+    margin: auto;
+    padding-top: 1rem;
+}
+
+.typestamp-row {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: space-around;
+    margin: 1rem 1rem;
+}
+
+.tyst-row-element {
+    border-radius: 5px;
+    box-shadow: 0 5px 30px rgb(7 36 86 / 8%);
+    background-color: white;
+    position: relative;
+    padding: 1rem 1rem 1.5rem;
+    transition: transform 0.25s;
+}
+
+.stamp-img {
+    display: block;
+    width: 300px;
+    height: auto;
 }
 
 .section-newsletter {
