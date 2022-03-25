@@ -1,16 +1,13 @@
 function onCloseModal(){
 
     document.getElementById("errorModal").close();
-
 }
-
 
 function alertMessage(message){
 
     let modal = document.getElementById("errorModal");
     document.getElementById("errorMessage").innerHTML = message;
     modal.showModal();
-
 }
 
 function checkPassword(password) { 
@@ -19,13 +16,13 @@ function checkPassword(password) {
     if(password.match(decimal)) 
         return true;
     
-    alertMessage('Password Errata')
+    alertMessage("La password non rispetta il formato prestabilito")
     return false;    
 } 
 
 function checkUsername(username){
     if (  username.length < 5 ){
-        alertMessage('Username Errato');
+        alertMessage("L'username non rispetta il formato prestabilito");
         return false;
     }
 
@@ -35,7 +32,7 @@ function checkUsername(username){
 function checkLogin(username, password){
 
     if ( username.length == 0 || password.length == 0 ){
-        alertMessage('Riempi tutti i campi');
+        alertMessage("Riempi entrambi i campi");
         return false;
     }
     return true;
@@ -71,3 +68,158 @@ function submitLogin(){
     //fai partire la richiesta la server
 }
 
+function contiansOnlyLetters(text){
+
+    let regex = /^[a-zA-Z]+$/;
+    return regex.test(text);
+}
+
+function checkCity(city){
+
+    if ( !contiansOnlyLetters(city) ){
+        alertMessage("Il nome della città può contenere solo lettere");
+        return false;
+    }
+
+    return true;    
+}
+
+function checkProv(prov){
+
+    if ( !contiansOnlyLetters(prov) ){
+        alertMessage("Il nome della provincia può contenere solo lettere");
+        return false;
+    }
+
+    return true;
+}
+
+function checkFullname(name,surname){
+
+    if ( !contiansOnlyLetters(name) || !contiansOnlyLetters(surname) ){
+        alertMessage("Il nome ed il cognome possono contenere solo lettere");
+        return false;
+    }
+
+    return true;
+}
+
+function checkEmail(email){
+
+    let mailformat = /\S+@\S+\.\S+/;
+    if( !mailformat.test(email)){
+        alertMessage("Indirizzo Email non valido");   
+        return false;
+    }
+
+    return true;
+}
+
+function checkPasswords(password,repassword){
+
+    if ( password != repassword ){
+        alertMessage("Le due password inserite non sono uguali");   
+        return false;
+    }
+
+    return true;
+}
+
+function checkSiginFields(name,surname,email,username,password,repassword,city,prov){
+
+    if ( name.length == 0 || surname.length == 0 || email.length == 0 || username.length == 0 || password.length == 0 || repassword.length == 0 || city.length == 0 || prov.length == 0 ){
+
+            alertMessage("Riempi tutti i campi");                                                        
+            return false;
+    }
+
+    return true;
+}
+
+function checkCheckBox(checkbox){
+
+    if( !checkbox ){
+
+        alertMessage("Accetta i termini e le condizioni");
+        return false;
+    }
+
+return true;
+}
+
+function clearSiginFields(){
+
+    document.getElementById("signName").value = '';
+    document.getElementById("signSurname").value = '';
+    document.getElementById("signEmail").value = '';
+    document.getElementById("signUsername").value = '';
+    document.getElementById("signPassword").value = '';
+    document.getElementById("signRePassword").value = '';
+    document.getElementById("signCity").value = '';
+    document.getElementById("signProvince").value = '';
+
+}
+
+function submitSigin(){
+
+    console.log("+");
+
+    let signName = document.getElementById("signName").value;
+    let signSurname = document.getElementById("signSurname").value;
+    let signEmail = document.getElementById("signEmail").value;
+    let signUsername = document.getElementById("signUsername").value;
+    let signPassword = document.getElementById("signPassword").value;
+    let signRePassword = document.getElementById("signRePassword").value;
+    let signCity = document.getElementById("signCity").value;
+    let signProvince = document.getElementById("signProvince").value;
+    let signBox = document.getElementById("signBox").checked;
+
+    if ( !checkSiginFields(signName,signSurname,signEmail,signUsername,signPassword,signRePassword,signCity,signProvince) ){
+        clearSiginFields();
+        return;
+    }
+
+
+    if ( !checkFullname(signName,signSurname) ){
+        clearSiginFields(); 
+        return;
+    }
+    
+    if ( !checkEmail(signEmail) ){
+        clearSiginFields();
+        return;
+    }
+
+    if ( !checkUsername(signUsername) ){
+        clearSiginFields(); 
+        return;
+    }
+    
+    if ( !checkPassword(signPassword) ){
+        clearSiginFields();
+        return;
+    }
+
+    if ( !checkPasswords(signPassword,signRePassword) ){
+        clearSiginFields();
+        return;
+    }
+
+     if ( !checkCity(signCity) ){
+        clearSiginFields();
+        return;
+    }
+        
+    if ( !checkProv(signProvince) ){
+        clearSiginFields();
+        return;
+    }
+
+    if ( !checkCheckBox(signBox) ){
+        clearSiginFields();
+        return;
+    }
+    
+    //dovrebbe essere tutto ok
+
+}

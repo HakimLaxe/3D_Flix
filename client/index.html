@@ -29,12 +29,13 @@
                     </ul>
 
                     <dialog id="errorModal">
-                        <div class="alert alert-danger">
-                            <strong>Errore!</strong> 
-                        </div>                        
-                        <p id="errorMessage">Message</p>
+                            <h3><strong>Errore!</strong></h3> 
+                                              
+                            <div class="alert alert-danger">
+                                <p id="errorMessage">Message</p>
+                            </div>
                         <div class="actions">
-                          <button id="small close-modal-btn" onclick="onCloseModal()">Chiudi</button>
+                          <button id="small close-modal-btn" class="btn btn-dark" onclick="onCloseModal()">Chiudi</button>
                         </div>
                       </dialog>
 
@@ -134,7 +135,7 @@
                                     </div>
                                     <div class="modal-row-alt" style="margin-bottom: 0.5rem;">
                                         <label>
-                                            <input type="checkbox" name="agree-terms" value="1" required class="checkmark-form">
+                                            <input type="checkbox" name="agree-terms" value="1" required class="checkmark-form" id="signBox">
                                             <a href=""> Ho letto e accetto i termini e le condizioni </a>
                                         </label>
                                     </div>
@@ -145,7 +146,7 @@
                                     </p> </label>
                                     </div>
                                     <div class="modal-row">
-                                        <input type="submit" value="Registrati" class="button-form">
+                                        <input type="submit" value="Registrati" class="button-form" id="siginConfirm" onclick="submitSigin()">
                                     </div>                                
                                 </div>
                             </div>
