@@ -119,8 +119,7 @@ a:hover {color: black;}
 .background {
     position: absolute;
     right: 0; left: 0; top: 0;
-    overflow: hidden;
-    width: 100%; height: 800px;
+    overflow: hidden; height: 800px;
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -131,7 +130,6 @@ a:hover {color: black;}
     box-sizing: border-box;
     display: flex;
     width: 100%;
-    max-width: 1200px;
     padding-left: 6vw;
     padding-right: 6vw;
     position: relative;
@@ -174,6 +172,7 @@ a:hover {color: black;}
     background-color: #f4f4f4;
     display: block;
     margin-top: 9.8rem;
+    
 }
 
 .section-one {
@@ -412,6 +411,21 @@ a:hover {color: black;}
     height: auto;
 }
 
+.section-blog {
+    position: relative;
+    width: auto; height: 600px
+}
+
+.blog-background {
+    position: relative;
+    right: 0; left: 0; top: 0;
+    overflow: hidden;
+    width: 100%; height: 800px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+}
+
 .section-newsletter {
     background-color: rgb(204, 204, 204);
     width: 85%; height: 320px;
@@ -419,7 +433,7 @@ a:hover {color: black;}
     position: relative;
     align-content: center;
     margin: auto;
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
 
 .newsletter-container {
