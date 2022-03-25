@@ -27,6 +27,17 @@
                         <li><a href="">Blog</a> <! Fare pagina Blog> </li>
                         <li><a href="">Chi Siamo</a> <! Fare pagina Chi Siamo> </li>
                     </ul>
+
+                    <dialog id="errorModal">
+                        <div class="alert alert-danger">
+                            <strong>Errore!</strong> 
+                        </div>                        
+                        <p id="errorMessage">Message</p>
+                        <div class="actions">
+                          <button id="small close-modal-btn" onclick="onCloseModal()">Chiudi</button>
+                        </div>
+                      </dialog>
+
                 </div>
                 
                 <div class="header-navbar-end">
@@ -49,7 +60,7 @@
                                     </div>
                                 </div>
                                 <div class="dropdown-row">
-                                    <input type="submit" id="loginSubmit" value="Accedi" class="button-form">
+                                    <input type="submit" id="loginSubmit" value="Accedi" class="button-form" onclick="submitLogin()">
                                     <a href=""> Hai dimenticato la password? </a>
                                 </div>
                             </div>
