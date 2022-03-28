@@ -48,6 +48,7 @@ a:hover {color: black;}
     margin-left: 2rem;
     display: flex;
     justify-content: left;
+    margin-bottom: 1rem;
 }
 
 .header {
@@ -412,18 +413,22 @@ a:hover {color: black;}
 }
 
 .section-blog {
+    width: 85%; height: auto;
+    margin-top: 4rem;
     position: relative;
-    width: auto; height: 600px
+    align-content: center;
+    background-image: url("images/Materiale\ Sito\ web/DEF_sfondo.jpg");
+    object-fit: cover;
+    margin: auto;
+    display: block;
 }
 
-.blog-background {
-    position: relative;
-    right: 0; left: 0; top: 0;
-    overflow: hidden;
-    width: 100%; height: 800px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
+.blog-container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    width: 100%;
+    z-index: 1;
+    box-sizing: inherit;
 }
 
 .section-newsletter {
