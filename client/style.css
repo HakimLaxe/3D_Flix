@@ -419,16 +419,25 @@ a:hover {color: black;}
     align-content: center;
     background-image: url("images/Materiale\ Sito\ web/DEF_sfondo.jpg");
     object-fit: cover;
+    background: linear-gradient(180deg, rgb(251,175,59) 0%,rgb(225,114,52) 100%);
     margin: auto;
     display: block;
 }
 
 .blog-container {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    width: 100%;
+    margin-top: 4rem;
+    padding: 3rem 3rem 3rem 3rem;
     z-index: 1;
     box-sizing: inherit;
+    align-content: space-between;
+}
+
+.blog-columns {
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    gap: 2rem;
 }
 
 .section-newsletter {
