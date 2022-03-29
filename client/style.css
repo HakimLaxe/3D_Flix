@@ -283,9 +283,9 @@ a:hover {color: black;}
 
 .element-block {
     border-radius: 5px;
-    box-shadow: 0 5px 30px rgb(7 6 36 86 / 8%);
     background-color: white;
-    transition: transform 0.25s;
+    display: flex;
+    padding: 1.5rem;
 }
 
 .element-header {
@@ -297,88 +297,35 @@ a:hover {color: black;}
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     display: block;
-    width: 100%;
-    height: auto;
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
 }
-
-.element-content {
-    margin-bottom: 0;
-    padding: 1.5rem;
-    position: relative;
-    z-index: 1;
-}
-
-.content-topbar {
-    border-radius: 5px;
-    box-shadow: 0 5px 30px rgb(7 6 36 86 / 8%);
-    background-color: white;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: -3.25rem 0 1.25rem;
-    padding: 0.625rem 1rem;
-}
-
 .vendor-info {
     display: flex;
     align-items: center;
 }
 
-.vendor-info-img {
-    flex: 0 0 2.1875rem;
-    margin-right: 0.75rem;
-}
-
-.vendor-img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 50%;
-}
-
 .vendor-name {
-    font-size: 0.875rem;
     white-space: nowrap;
-    margin: 0;
+    margin-top: 0.5rem;
     word-wrap: break-word;
-}
-
-.content-middle {
-    margin: 0;
-    word-wrap: break-word;
+    text-align: center;
+    font-weight: 300;
 }
 
 .content-footer {
-    padding: 1rem 1.5rem;
-    border-top: 1px solid rgba(7, 36, 86, 0.075rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.footer-attributes-primary {
-    margin-right: 1rem;
-    min-width: 0;
+.footer-attributes {
     display: flex;
     align-items: center;
 }
 
-.attribute-provincia {
-    font-size: 1.25rem;
-    min-width: 0;
-    word-wrap: break-word;
-}
 
-.footer-attributes-secondary {
-    display: flex;
-    align-items: center;
-}
-
-.attribute-message {
-    display: none;
-    width: 380px;
-}
 
 .section-typestamp {
     width: 85%; height: auto;
@@ -414,30 +361,23 @@ a:hover {color: black;}
 
 .section-blog {
     width: 85%; height: auto;
-    margin-top: 4rem;
     position: relative;
-    align-content: center;
     background-image: url("images/Materiale\ Sito\ web/DEF_sfondo.jpg");
     object-fit: cover;
     background: linear-gradient(180deg, rgb(251,175,59) 0%,rgb(225,114,52) 100%);
     margin: auto;
     display: block;
-}
-
-.blog-container {
     margin-top: 4rem;
-    padding: 3rem 3rem 3rem 3rem;
+    padding: 3rem;
     z-index: 1;
     box-sizing: inherit;
-    align-content: space-between;
+    align-content: center;
 }
 
 .blog-columns {
-    margin-bottom: 0;
+    margin-top: 2rem;
     display: flex;
-    flex-wrap: nowrap;
-    box-sizing: border-box;
-    gap: 2rem;
+    align-content: space-between;
 }
 
 .section-newsletter {
