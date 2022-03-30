@@ -3,6 +3,7 @@
 //import express
 const express = require('express');
 const morgan = require('morgan'); // logging middleware
+const cors = require('cors')
 const jwt = require('express-jwt');
 const jsonwebtoken = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
@@ -15,7 +16,10 @@ const authErrorObj = { errors: [{  'param': 'Server', 'msg': 'Authorization erro
 const app = express();
 const port = 3001;
 
-var con = mysql.createConnection({
+app.use(cors())
+app.use(express.json());
+
+const con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "password"
@@ -27,3 +31,27 @@ con.connect(function(err) {
   })
 
 app.listen(port, ()=>console.log(`Server running on http://localhost:${port}/`));
+
+app.post('/api/login', (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+  console.log("Received login request: " + username + " " + password)
+  res.json("Login correctly Performed");
+});
+
+app.post('/api/sigin', (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+  const name = req.body.name;
+  const surname = req.body.surname;
+  const mail = req.body.mail;
+  const city = req.body.city;
+  const prov = req.body.prov;
+
+  console.log(`Received sigin request:
+              username ${username} password ${password}
+              name ${name} surname ${surname}
+              mail ${mail} city ${city} prov ${prov}`)
+
+  res.json("Sigin correctly Performed");
+});

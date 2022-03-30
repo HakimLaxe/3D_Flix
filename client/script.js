@@ -1,3 +1,5 @@
+const { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } = require("constants");
+
 function onCloseModal(){
 
     document.getElementById("errorModal").close();
@@ -64,8 +66,18 @@ function submitLogin(){
         clearLoginFields()
         return;
     }
+
+    userLogin(loginUsername,loginPassword).then(
+        (response) => { 
+            console.log(response)
+        }
+      ).catch(
+        (errorObj) => {
+          console.log(errorObj.errors[0]);
+          alertMessage('Username and/or Password are not correct');
     
-    //fai partire la richiesta la server
+        }
+      );
 }
 
 function contiansOnlyLetters(text){
