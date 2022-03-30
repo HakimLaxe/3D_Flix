@@ -301,6 +301,23 @@ a:hover {color: black;}
     width: 100px;
     height: 100px;
 }
+
+.element-content {
+    display: block;
+    align-items: flex-start;
+    margin-left: 2rem;
+}
+
+.list-content {
+    align-items: center;
+    margin: auto;
+}
+
+.list-content-container {
+    width: 200px; height: 130px;
+    border: solid;
+}
+
 .vendor-info {
     display: flex;
     align-items: center;
@@ -315,17 +332,14 @@ a:hover {color: black;}
 }
 
 .content-footer {
-    display: flex;
-    justify-content: space-between;
+    display: block;
     align-items: center;
 }
 
 .footer-attributes {
     display: flex;
-    align-items: center;
+    justify-content:flex-start;
 }
-
-
 
 .section-typestamp {
     width: 85%; height: auto;
