@@ -174,8 +174,6 @@ function clearSiginFields(){
 
 function submitSigin(){
 
-    console.log("+");
-
     let signName = document.getElementById("signName").value;
     let signSurname = document.getElementById("signSurname").value;
     let signEmail = document.getElementById("signEmail").value;
@@ -235,7 +233,6 @@ function submitSigin(){
     //dovrebbe essere tutto ok
 
 }
-
 
 //Slider Immagini Stampanti
 
