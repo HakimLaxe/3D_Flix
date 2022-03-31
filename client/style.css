@@ -309,11 +309,23 @@ a:hover {color: black;}
 }
 
 .list-content {
-    align-items: center;
+    align-items: flex-start;
     margin: auto;
+    display: flex;
 }
 
 .list-content-container {
+    width: 200px; height: 130px;
+    border: solid;
+    cursor: pointer;
+}
+
+.slider {
+    display: none;
+}
+
+.list-content-container:hover + .slider {
+    display: block;
     width: 200px; height: 130px;
     border: solid;
 }
