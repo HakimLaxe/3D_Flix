@@ -235,3 +235,10 @@ function submitSigin(){
     //dovrebbe essere tutto ok
 
 }
+
+
+//Slider Immagini Stampanti
+
+$('.carousel').slider({
+    interval: 1000
+  })

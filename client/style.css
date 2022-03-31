@@ -257,7 +257,7 @@ a:hover {color: black;}
 }
 
 .stamp-list {
-    padding-top: 4rem;
+    padding-top: 2rem;
     margin: auto;
     display: block;
     position: relative;
@@ -304,12 +304,12 @@ a:hover {color: black;}
 
 .element-content {
     display: block;
-    align-items: flex-start;
+    align-items: center;
     margin-left: 2rem;
 }
 
 .list-content {
-    align-items: flex-start;
+    align-items: center;
     margin: auto;
     display: flex;
 }
@@ -317,17 +317,21 @@ a:hover {color: black;}
 .list-content-container {
     width: 200px; height: 130px;
     border: solid;
-    cursor: pointer;
 }
 
 .slider {
     display: none;
 }
 
-.list-content-container:hover + .slider {
+.list-content:hover .slider {
     display: block;
-    width: 200px; height: 130px;
-    border: solid;
+    position: absolute;
+    width: 400px; height: 260px;
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 14rem;
+    z-index: 200;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
 }
 
 .vendor-info {
@@ -393,7 +397,7 @@ a:hover {color: black;}
     background: linear-gradient(180deg, rgb(251,175,59) 0%,rgb(225,114,52) 100%);
     margin: auto;
     display: block;
-    margin-top: 4rem;
+    margin-top: 3rem;
     padding: 3rem;
     z-index: 1;
     box-sizing: inherit;
