@@ -319,19 +319,62 @@ a:hover {color: black;}
     border: solid;
 }
 
-.slider {
+.slide {
     display: none;
 }
 
-.list-content:hover .slider {
+.list-content:hover .slide {
     display: block;
     position: absolute;
-    width: 400px; height: 260px;
-    background-color: white;
+    width: 200px; height: 130px;
+    overflow: hidden;
     border-radius: 5px;
-    margin-left: 14rem;
+    margin-left: 13rem;
+    margin-bottom: 1rem;
     z-index: 200;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+#slider ul {
+    position: relative;
+    list-style: none;
+    height: 100%;
+    width: 10000%;
+    padding: 0;
+    margin: 0;
+    transition: all 750ms ease;
+    left: 0;
+}
+
+#slider ul li {
+    position: relative;
+    height: 100%;
+    float: left;
+}
+
+#slider ul li img{
+    width: 200px;
+    height: 130px;
+}
+
+#slider #prev, #slider #next {
+    width: 50px;
+    font-size: 1rem;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#slider #prev {
+    left: 1px;
+}
+
+#slider #next {
+    right: 1px;
 }
 
 .vendor-info {
