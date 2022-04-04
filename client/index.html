@@ -10,6 +10,12 @@
               crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script>
+            document.addEventListener( 'DOMContentLoaded', function () {
+              new Splide( '#slider' ).mount();
+            } );
+        </script>
     </head>
     
     <body>
@@ -311,13 +317,13 @@
                                         <a href=""><img src=""></a>
                                     </figure>
                                     <div id="slider" class="slide">
-                                        <ul id="slideWrap">
+                                        <ul id="slideWrap"> 
                                             <li><img src="images/Materiale Sito web/Facebook_logo.png" alt=""></li>
                                             <li><img src="images/Materiale Sito web/Instagram_logo.png" alt=""></li>
                                             <li><img src="images/Materiale Sito web/Tiktok_logo.png" alt=""></li>
                                         </ul>
-                                        <a id="prev" href="">&lsaquo;</a>
-                                        <a id="next" href="">&rsaquo;</a>
+                                        <a id="prev" href="">&#8249;</a>
+                                        <a id="next" href="">&#8250;</a>
                                     </div>
                                 </div>
                             </div>
@@ -543,9 +549,12 @@
 
                 <script type="text/javascript" src="api/API.js"></script>
                 <script type="text/javascript" src="script.js"></script>
+
             </footer>
 
         </div>
+
+        <script src="script.js"></script>
 
     </body>
 </html>

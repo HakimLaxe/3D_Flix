@@ -348,17 +348,20 @@ a:hover {color: black;}
 #slider ul li {
     position: relative;
     height: 100%;
+   
     float: left;
 }
 
 #slider ul li img{
     width: 200px;
     height: 130px;
-}
+}  
 
 #slider #prev, #slider #next {
-    width: 50px;
-    font-size: 1rem;
+    width: 10px;
+    line-height: 10px;
+    border-radius: 50%;
+    font-size: 2rem;
     text-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
     text-align: center;
     color: white;
@@ -366,14 +369,15 @@ a:hover {color: black;}
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    transition: all 150ms ease;
 }
 
 #slider #prev {
-    left: 1px;
+    left: 10px;
 }
 
 #slider #next {
-    right: 1px;
+    right: 10px;
 }
 
 .vendor-info {
