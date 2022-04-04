@@ -294,8 +294,6 @@ a:hover {color: black;}
 }
 
 .element-img {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
     display: block;
     object-fit: cover;
     width: 100px;
@@ -317,6 +315,7 @@ a:hover {color: black;}
 .list-content-container {
     width: 200px; height: 130px;
     border: solid;
+    border-radius: 5px;
 }
 
 .slide {
