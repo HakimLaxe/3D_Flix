@@ -75,7 +75,7 @@ function submitLogin(){
       ).catch(
         (errorObj) => {
           console.log(errorObj.errors[0]);
-          alertMessage('Username and/or Password are not correct');
+          alertMessage('Username e/o Password non sono corretti');
     
         }
       );
@@ -236,4 +236,4 @@ function submitSigin(){
 }
 
 
-//Slider
+//Fare script Slider
