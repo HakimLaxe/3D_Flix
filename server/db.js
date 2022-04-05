@@ -64,7 +64,7 @@ function verifySiginCredential (username, mail) {
 };
 
 function checkPassword(user, password){
-
+    
     return bcrypt.compare(password, user.password);
 }
 

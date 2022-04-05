@@ -24,7 +24,7 @@ app.use(morgan('tiny'));
 app.use(express.json());
 
 //db.verifySiginCredential("3DFLLLL","POPPETTINO").then(user => console.log(user));
-mailHandler.sendMail("lucafumarola96@gmail.com");
+//mailHandler.sendMail("lucafumarola96@gmail.com"); stop send me email bro :(
 
 app.listen(port, ()=>console.log(`Server running on http://localhost:${port}/`));
 
@@ -39,16 +39,19 @@ app.post('/api/login', (req, res) => {
               errors: [{ 'param': 'Server', 'msg': 'Invalid user' }] 
             });
       } else {
-          if(!db.checkPassword(user, password)){
-              res.status(401).send({
+          db.checkPassword(user, password).then( result => {
+              if ( !result){
+                res.status(401).send({
                   errors: [{ 'param': 'Server', 'msg': 'Wrong password' }] 
                 });
-          } else {
-              //AUTHENTICATION SUCCESS
-              const token = jsonwebtoken.sign({ user: user.Username }, jwtSecret, {expiresIn: expireTime});
-              res.cookie('token', token, { httpOnly: true, sameSite: true, maxAge: 1000*expireTime });
-              res.json({username: user.username});
-          }
+              }
+              else {
+                //AUTHENTICATION SUCCESS
+                const token = jsonwebtoken.sign({ user: user.Username }, jwtSecret, {expiresIn: expireTime});
+                res.cookie('token', token, { httpOnly: true, sameSite: true, maxAge: 1000*expireTime });
+                res.json({username: user.username});
+            }
+          }) 
       } 
     }).catch(
       // Delay response when wrong user/pass is sent to avoid fast guessing attempts
