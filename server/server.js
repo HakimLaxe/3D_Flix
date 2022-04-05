@@ -18,15 +18,14 @@ const expireTime = 300; //seconds
 const authErrorObj = { errors: [{  'param': 'Server', 'msg': 'Authorization error' }] };
 //create application
 const app = express();
-const port = 3001;
 app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.json());
 
 //db.verifySiginCredential("3DFLLLL","POPPETTINO").then(user => console.log(user));
-//mailHandler.sendMail("lucafumarola96@gmail.com"); stop send me email bro :(
+// mailHandler.sendMail("lucafumarola96@gmail.com"); //stop send me email bro :(
 
-app.listen(port, ()=>console.log(`Server running on http://localhost:${port}/`));
+app.listen(config.ServerSetting.PORT,()=>console.log(`Server running on ${config.ServerSetting.SERVER_URL}:${config.ServerSetting.PORT}/`));
 
 app.post('/api/login', (req, res) => {
   const username = req.body.username;
@@ -40,7 +39,7 @@ app.post('/api/login', (req, res) => {
             });
       } else {
           db.checkPassword(user, password).then( result => {
-              if ( !result){
+              if (!result){
                 res.status(401).send({
                   errors: [{ 'param': 'Server', 'msg': 'Wrong password' }] 
                 });
@@ -63,6 +62,7 @@ app.post('/api/login', (req, res) => {
 });
 
 app.post('/api/sigin', (req, res) => {
+  
   const username = req.body.username;
   const password = req.body.password;
   const name = req.body.name;
@@ -71,12 +71,23 @@ app.post('/api/sigin', (req, res) => {
   const city = req.body.city;
   const prov = req.body.prov;
 
-  console.log(`Received sigin request:
-              username ${username} password ${password}
-              name ${name} surname ${surname}
-              mail ${mail} city ${city} prov ${prov}`)
+  db.verifySiginCredential(username, mail).then((result) => {
+      if (result){
+          db.insertUser(name, surname, username, password, mail, city, prov)
+            .than( () => {
+              let code = mailHandler.sendMail(mail);
+              db.insertValidateUser(username,code).than( () => console.log("Sigin Procedure ended correctly!") );
+            });  
+      }
+  })
+  .catch(
+    // Delay response when wrong user/pass is sent to avoid fast guessing attempts
+    (err) => {
+        console.log("Error Catched in /api/sigin")
+        new Promise((resolve) => {setTimeout(resolve, 1000)}).then(() => res.status(401).json(authErrorObj))
+    }
+  );
 
-  res.json("Sigin correctly Performed");
 });
 
 app.use(cookieParser());

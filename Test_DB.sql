@@ -13,6 +13,12 @@ Prov VARCHAR(255) NOT NULL,
 PRIMARY KEY(`Nickname`)
 );
 
+CREATE TABLE IF NOT EXISTS ValidateUser(
+Nickname VARCHAR(255) NOT NULL,
+ActivationCode VARCHAR(255) NOT NULL,
+PRIMARY KEY(`Nickname`)
+);
+
 INSERT INTO User(Name,Surname, NickName, PasswordHash, Mail, City, Prov)
 VALUES("Mario","Rossi","RossiM01","$2a$10$vhziCJuwkzAykzOyVIoQnuAj6A/2wBJRPA0cKMToFY3DTaRU0wL3K","MarioRossi@mail.com","Roma","RO");
 

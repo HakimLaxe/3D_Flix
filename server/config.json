@@ -10,11 +10,11 @@
         "DB_NAME": "3D-Flix"
     },
     "Mail": {
-        "MAIL_SERVICE" : "Gmail",
-        "MAIL_HOST" : "smtp.gmail.com",
-        "MAIL_ADDRESS" : "3dflixprinter@gmail.com",
-        "MAIL_PASSWORD" : "3DFlixSpacca!", 
-        "MAIL_PORT" : "587",
+        "MAIL_SERVICE" : "Aruba",
+        "MAIL_HOST" : "smtp.aruba.it",
+        "MAIL_ADDRESS" : "noreply@3dflix.it",
+        "MAIL_PASSWORD" : "DU*JsJ?EeUcbW9$", 
+        "MAIL_PORT" : "465",
         "MAIL_CONFIRM_SIGIN_SUBJECT" : "Conferma la mail per 3D-Flix"
     }
 }

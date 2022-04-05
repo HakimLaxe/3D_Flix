@@ -2,14 +2,18 @@ const nodemailer = require('nodemailer');
 const config = require('./config.json');
 
 const transporter = nodemailer.createTransport({
-    service: config.Mail.MAIL_SERVICE,
-    //host: config.Mail.MAIL_HOST,
-    //port: config.Mail.MAIL_PORT,
+    //service: config.Mail.MAIL_SERVICE,
+    host: config.Mail.MAIL_HOST,
+    port: config.Mail.MAIL_PORT,
+    secure: true,
     auth: {
         user: config.Mail.MAIL_ADDRESS,
         pass: config.Mail.MAIL_PASSWORD
-    }
-    /*secureConnection: 'false',
+    },
+    tls: {
+        rejectUnauthorized: false,
+    },
+    /*secureConnection: 'true',
     tls: {
         ciphers: 'SSLv3',
         rejectUnauthorized: false
@@ -24,7 +28,7 @@ function generatePassword() {
         let randomNumber = Math.floor(Math.random() * chars.length);
         password += chars.substring(randomNumber, randomNumber +1);
     }
-
+    return password;
 }
 
 function sendMail(mail){
@@ -41,10 +45,10 @@ function sendMail(mail){
 
         if (error) {
           console.log(error);
-          return false;
+          return undefined;
         } else {
           console.log('Email sent: ' + info.response);
-          return true;
+          return password;
         }
       });
 
