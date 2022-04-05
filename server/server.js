@@ -1,5 +1,4 @@
 'use strict';
-
 //import express
 const express = require('express');
 const morgan = require('morgan'); // logging middleware
@@ -7,8 +6,12 @@ const cors = require('cors')
 const jwt = require('express-jwt');
 const jsonwebtoken = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
+const nodemailer = require('nodemailer');
 const mysql = require('mysql');
-const userDao = require('./user_dao');
+const config = require('./config.json');
+const db = require('./db');
+const mailHandler = require('./mail');
+//const userDao = require('./user_dao');
 const jwtSecret = '6xvL4xkAAbG49hcXf5GIYSvkDICiUAR6EdR5dLdwW7hMzUjjMUe9t6M5kSAYxsvX';
 const expireTime = 300; //seconds
 // Authorization error
@@ -16,21 +19,12 @@ const authErrorObj = { errors: [{  'param': 'Server', 'msg': 'Authorization erro
 //create application
 const app = express();
 const port = 3001;
-
 app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.json());
 
-const con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "password"
-  });
-  
-con.connect(function(err) {
-    if (err) console.log("Cannot establish a connection with the Database");
-    else console.log("Connected to the Database!");
-  })
+//db.verifySiginCredential("3DFLLLL","POPPETTINO").then(user => console.log(user));
+mailHandler.sendMail("lucafumarola96@gmail.com");
 
 app.listen(port, ()=>console.log(`Server running on http://localhost:${port}/`));
 
@@ -38,14 +32,14 @@ app.post('/api/login', (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
 
-  userDao.getUser(con,username)
+  db.getUser(username)
     .then((user) => {
       if(user === undefined) {
           res.status(404).send({
               errors: [{ 'param': 'Server', 'msg': 'Invalid user' }] 
             });
       } else {
-          if(!userDao.checkPassword(user, password)){
+          if(!db.checkPassword(user, password)){
               res.status(401).send({
                   errors: [{ 'param': 'Server', 'msg': 'Wrong password' }] 
                 });
