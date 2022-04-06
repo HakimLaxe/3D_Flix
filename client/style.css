@@ -337,8 +337,7 @@ a:hover {color: black;}
     width: 200px; height: 130px;
     overflow: hidden;
     border-radius: 5px;
-    margin-left: 13rem;
-    margin-bottom: 1rem;
+    margin-top: 15.5rem;
     z-index: 200;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
 }
