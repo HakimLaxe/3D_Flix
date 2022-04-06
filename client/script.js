@@ -6,9 +6,19 @@ function onCloseModal(){
     document.getElementById("errorModal").close();
 }
 
+function genericMessage(message){
+
+    let modal = document.getElementById("errorModal");
+    document.getElementById("modalTitle").innerHTML = "";
+    document.getElementById("errorMessage").innerHTML = message;
+    modal.showModal();
+
+}
+
 function alertMessage(message){
 
     let modal = document.getElementById("errorModal");
+    document.getElementById("modalTitle").innerHTML = "Errore!";
     document.getElementById("errorMessage").innerHTML = message;
     modal.showModal();
 }
@@ -70,7 +80,7 @@ function submitLogin(){
 
     userLogin(loginUsername,loginPassword).then(
         (response) => { 
-            console.log(response)
+            location.replace("./user.html");
         }
       ).catch(
         (errorObj) => {
@@ -231,8 +241,19 @@ function submitSigin(){
         return;
     }
     
-    //dovrebbe essere tutto ok
-
+    userSigin(signUsername,signPassword,signEmail,signName,signSurname,signCity,signProvince)
+        .then(
+            (response) => { 
+                console.log(response);
+                genericMessage("Per terminare la registrazione, conferma la mail che ti abbiamo invato");
+            }
+        ).catch(
+            (errorObj) => {
+            console.log(errorObj.errors[0]);
+            alertMessage('Errore di registrazione');
+        
+            }
+        );
 }
 
 
