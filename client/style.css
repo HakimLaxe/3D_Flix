@@ -347,7 +347,7 @@ a:hover {color: black;}
     position: relative;
     list-style: none;
     height: 100%;
-    width: 10000%;
+    width: 100%;
     padding: 0;
     margin: 0;
     transition: all 750ms ease;
@@ -357,7 +357,6 @@ a:hover {color: black;}
 #slider ul li {
     position: relative;
     height: 100%;
-   
     float: left;
 }
 
