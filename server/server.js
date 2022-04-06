@@ -22,8 +22,7 @@ app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.json());
 
-//db.verifySiginCredential("3DFLLLL","POPPETTINO").then(user => console.log(user));
-// mailHandler.sendMail("lucafumarola96@gmail.com"); //stop send me email bro :(
+//mailHandler.sendMail("lucafumarola96@gmail.com"); //stop send me email bro :(
 
 app.listen(config.ServerSetting.PORT,()=>console.log(`Server running on ${config.ServerSetting.SERVER_URL}:${config.ServerSetting.PORT}/`));
 
@@ -73,10 +72,19 @@ app.post('/api/sigin', (req, res) => {
 
   db.verifySiginCredential(username, mail).then((result) => {
       if (result){
-          db.insertUser(name, surname, username, password, mail, city, prov)
-            .than( () => {
+          let passwordHash = db.encryptPassword(password);
+          db.insertUser(name, surname, username, passwordHash, mail, city, prov)
+            .then( () => {
               let code = mailHandler.sendMail(mail);
-              db.insertValidateUser(username,code).than( () => console.log("Sigin Procedure ended correctly!") );
+              db.insertValidateUser(username,code).then( (insertReturnValue) => {
+                res.json(insertReturnValue);
+              });
+            })
+            .catch( (err) => {
+              console.log(err);
+              res.status(500).json({
+                errors: [{'msg': err}],
+             });
             });  
       }
   })

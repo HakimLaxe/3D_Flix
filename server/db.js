@@ -65,7 +65,7 @@ function verifySiginCredential (username, mail) {
 
 function insertUser (name, surname, username, password, mail, city, prov) {
     return new Promise((resolve, reject) => {
-        let sql = 'INSERT INTO User(Name,Surname, NickName, PasswordHash, Mail, City, Prov) VALUES(?,?,?,?,?)';
+        let sql = 'INSERT INTO User(Name,Surname, NickName, PasswordHash, Mail, City, Prov) VALUES(?,?,?,?,?,?,?)';
         
         connection.query(sql, [name, surname, username, password, mail, city, prov] ,function (err, result) {
             if (err) {
@@ -132,15 +132,37 @@ function deleteValidatedUser (username){
     });
 };
 
+function updateMail (username, mail){
+    return new Promise((resolve, reject) => {
+        let sql = 'UPDATE User SET Mail = ? WHERE Nickname = ?'
+        
+        connection.query(sql, [mail,username] ,function (err, result) {
+            if (err) {
+                console.log(err);
+                reject(err);
+            }
+            else
+                resolve(true);
+
+        });
+    });
+};
+
+function encryptPassword(password){
+    let hash = bcrypt.hashSync(password, 10);
+    return hash;
+}
+
 function checkPassword(user, password){
-    
     return bcrypt.compare(password, user.password);
 }
 
 exports.getUser = getUser;
 exports.verifySiginCredential = verifySiginCredential;
 exports.checkPassword = checkPassword;
+exports.encryptPassword = encryptPassword;
 exports.insertUser = insertUser;
 exports.insertValidateUser = insertValidateUser;
 exports.getValidationCode = getValidationCode;
 exports.deleteValidatedUser = deleteValidatedUser;
+exports.updateMail = updateMail;

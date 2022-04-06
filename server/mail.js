@@ -2,17 +2,15 @@ const nodemailer = require('nodemailer');
 const config = require('./config.json');
 
 const transporter = nodemailer.createTransport({
-    //service: config.Mail.MAIL_SERVICE,
-    host: config.Mail.MAIL_HOST,
-    port: config.Mail.MAIL_PORT,
-    secure: true,
+    service: config.Mail.MAIL_SERVICE,
+    //host: config.Mail.MAIL_HOST,
+    //port: config.Mail.MAIL_PORT,
+    //secure: true,
     auth: {
         user: config.Mail.MAIL_ADDRESS,
         pass: config.Mail.MAIL_PASSWORD
     },
-    tls: {
-        rejectUnauthorized: false,
-    },
+
     /*secureConnection: 'true',
     tls: {
         ciphers: 'SSLv3',
@@ -38,7 +36,7 @@ function sendMail(mail){
         from: config.Mail.MAIL_ADDRESS,
         to: mail,
         subject: config.Mail.MAIL_CONFIRM_SIGIN_SUBJECT,
-        text: `Per confermare l'account fai accesso con la seguente password temporanea: <h1>${password}</h1>`
+        html: `Per confermare l'account fai accesso con la seguente password temporanea: <h1>${password}</h1>`
     };
 
     transporter.sendMail(mailOptions, function(error, info){
@@ -46,12 +44,13 @@ function sendMail(mail){
         if (error) {
           console.log(error);
           return undefined;
-        } else {
+        } 
+        else {
           console.log('Email sent: ' + info.response);
-          return password;
         }
       });
 
+      return password;
 }
 
 exports.sendMail = sendMail;
