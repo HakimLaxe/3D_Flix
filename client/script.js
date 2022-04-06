@@ -70,7 +70,7 @@ function submitLogin(){
 
     userLogin(loginUsername,loginPassword).then(
         (response) => { 
-            console.log(response)
+            location.replace("./user.html");
         }
       ).catch(
         (errorObj) => {

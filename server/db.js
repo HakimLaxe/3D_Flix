@@ -72,7 +72,6 @@ function insertUser (name, surname, username, password, mail, city, prov) {
                 console.log(err);
                 reject(err);
             }
-
             else {
                 resolve(true);    
             }
