@@ -4,6 +4,9 @@ const mysql = require('mysql');
 const bcrypt = require('bcrypt');
 const config = require('./config.json');
 
+let hash = bcrypt.hashSync("3DFlixspacca!", 10);
+    console.log(hash);
+
 const connection = mysql.createConnection({
     host: config.Database.DB_HOST,
     user: config.Database.DB_USER,

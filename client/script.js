@@ -85,7 +85,7 @@ function submitLogin(){
       ).catch(
         (errorObj) => {
           console.log(errorObj.errors[0]);
-          alertMessage('Username e/o Password non sono corretti');
+          alertMessage('Username e/o Password errati');
     
         }
       );

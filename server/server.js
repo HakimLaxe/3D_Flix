@@ -22,8 +22,6 @@ app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.json());
 
-//mailHandler.sendMail("lucafumarola96@gmail.com"); //stop send me email bro :(
-
 app.listen(config.ServerSetting.PORT,()=>console.log(`Server running on ${config.ServerSetting.SERVER_URL}:${config.ServerSetting.PORT}/`));
 
 app.post('/api/login', (req, res) => {
@@ -38,6 +36,9 @@ app.post('/api/login', (req, res) => {
             });
       } else {
           db.checkPassword(user, password).then( result => {
+            console.log(user);
+            console.log(password);
+            console.log(result);
               if (!result){
                 res.status(401).send({
                   errors: [{ 'param': 'Server', 'msg': 'Wrong password' }] 
