@@ -78,9 +78,17 @@ function submitLogin(){
         return;
     }
 
+    
     userLogin(loginUsername,loginPassword).then(
         (response) => { 
-            location.replace("./user.html");
+            isUserValidated(loginUsername).then( validationValue => {
+                if (validationValue){
+                    location.replace("./user.html");
+                }
+                else {
+                    alertMessage("Conferma la mail prima di fare l'accesso");
+                }
+            });
         }
       ).catch(
         (errorObj) => {

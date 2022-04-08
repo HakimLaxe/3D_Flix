@@ -62,3 +62,19 @@ async function userSigin(username, password, mail, name, surname, city, prov) {
         }).catch((err) => { reject({ errors: [{ param: "Server", msg: "Cannot communicate" }] }) }); // connection errors
     });
 }
+
+async function isUserValidated(username){
+
+    let requestUrl = url + "/api/verifyUser/" + username;
+    const response = await fetch(requestUrl);
+    const valueJson = await response.json();
+    return valueJson.verification;
+}
+
+async function validateUser(username, code){
+    
+    let requestUrl = url + `/api/verificationRequest/${username}/${code}`;
+    const response = await fetch(requestUrl);
+    const valueJson = await response.json();
+    return valueJson.verificationRequest;
+}

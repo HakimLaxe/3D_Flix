@@ -36,9 +36,6 @@ app.post('/api/login', (req, res) => {
             });
       } else {
           db.checkPassword(user, password).then( result => {
-            console.log(user);
-            console.log(password);
-            console.log(result);
               if (!result){
                 res.status(401).send({
                   errors: [{ 'param': 'Server', 'msg': 'Wrong password' }] 
@@ -76,7 +73,7 @@ app.post('/api/sigin', (req, res) => {
           let passwordHash = db.encryptPassword(password);
           db.insertUser(name, surname, username, passwordHash, mail, city, prov)
             .then( () => {
-              let code = mailHandler.sendMail(mail);
+              let code = mailHandler.sendMail(mail, username);
               db.insertValidateUser(username,code).then( (insertReturnValue) => {
                 res.json(insertReturnValue);
               });
@@ -97,6 +94,35 @@ app.post('/api/sigin', (req, res) => {
     }
   );
 
+});
+
+app.get('/api/verifyUser/:user', (req,res) => {
+  db.getValidationCode(req.params.user)
+    .then( code => {
+        if (!code){
+          res.json({"verification": true});
+        }
+        else{
+          res.json({"verification": false});
+        }
+    });
+});
+
+app.get('/api/verificationRequest/:user/:code', (req,res) => {
+  console.log("entro accuddi");
+  db.getValidationCode(req.params.user)
+    .then( code => {
+        if ( code == req.params.code ){
+          db.deleteValidatedUser(req.params.user)
+            .then( deleteResult => {
+              if (deleteResult)
+              res.json({"verificationRequest": true});
+            });
+        }
+        else{
+          res.json({"verificationRequest": false});
+        }
+    })
 });
 
 app.use(cookieParser());

@@ -19,8 +19,8 @@ const transporter = nodemailer.createTransport({
 });
 
 function generatePassword() {
-    let chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    let passwordLength = 12;
+    let chars = "0123456789";
+    let passwordLength = 15;
     let password = "";
     for (let i = 0; i <= passwordLength; i++) {
         let randomNumber = Math.floor(Math.random() * chars.length);
@@ -29,14 +29,14 @@ function generatePassword() {
     return password;
 }
 
-function sendMail(mail){
+function sendMail(mail, username){
 
     let password = generatePassword();
     let mailOptions = {
         from: config.Mail.MAIL_ADDRESS,
         to: mail,
         subject: config.Mail.MAIL_CONFIRM_SIGIN_SUBJECT,
-        html: `Per confermare l'account fai accesso con la seguente password temporanea: <h1>${password}</h1>`
+        html: `Per confermare l'account fai accesso al seguente link: ${config.ServerSetting.SERVER_URL}:${config.ServerSetting.PORT}/api/verificationRequest/${username}/${password}"`
     };
 
     transporter.sendMail(mailOptions, function(error, info){
@@ -44,8 +44,7 @@ function sendMail(mail){
         if (error) {
           console.log(error);
           return undefined;
-        } 
-        else {
+        }         else {
           console.log('Email sent: ' + info.response);
         }
       });
