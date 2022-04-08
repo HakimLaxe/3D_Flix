@@ -577,3 +577,12 @@ a:hover {color: black;}
     justify-content: flex-end;
     gap: 30px;
 }
+
+.whoarewe {
+    width: 75%; height: auto;
+    position: relative;
+    background-color: white;
+    margin: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
