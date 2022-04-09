@@ -586,3 +586,7 @@ a:hover {color: black;}
     padding-top: 3rem;
     padding-bottom: 3rem;
 }
+
+.fa-hand-o-up {
+    height: 50px; width: 50px;
+}
