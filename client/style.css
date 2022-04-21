@@ -590,3 +590,44 @@ a:hover {color: black;}
 .fa-hand-o-up {
     height: 50px; width: 50px;
 }
+
+.launch-stamp-disclaimer {
+    width: 80%; height: auto;
+    position: relative;
+    background-color: white;
+    margin: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.launch-stamp {
+    width: 80%; height: auto;
+    position: relative;
+    background-color: white;
+    margin: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.launch-content {
+    margin-left: 7rem;
+    margin-right: 7rem;
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.launch-content-one {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.launch-content-two {
+    align-items: center;
+    display: flex;
+    margin-left: 15rem;
+    margin-right: 15rem;
+    justify-content: space-around;
+    box-sizing: border-box;
+}
