@@ -534,6 +534,15 @@ a:hover {color: black;}
     border-style: groove;
 }
 
+.button-form-alt {
+    background-color: orange;
+    border-radius: 20px;
+    padding: 0.3rem 0.5rem;
+    width: 10rem;
+    border-style: groove;
+    font-size: 18px;
+}
+
 .footer {
     flex-wrap: nowrap;
     padding: 1.5rem 0;
@@ -630,4 +639,17 @@ a:hover {color: black;}
     margin-right: 15rem;
     justify-content: space-around;
     box-sizing: border-box;
+}
+
+.logIn-content {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin: auto;
+    width: 380px;
+}
+
+.signIn-content {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin: auto;
 }

@@ -4,6 +4,7 @@ const { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } = require("constants");
 function onCloseModal(){
 
     document.getElementById("errorModal").close();
+
 }
 
 function genericMessage(message){
