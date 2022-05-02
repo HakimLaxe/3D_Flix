@@ -21,6 +21,10 @@ a:hover {color: black;}
     z-index: 1;
 }
 
+.modal-title {
+    pointer-events: none;
+}
+
 .modal-content {
     height: auto;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -49,6 +53,16 @@ a:hover {color: black;}
     display: flex;
     justify-content: left;
     margin-bottom: 1rem;
+}
+
+.modal-row-alter {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .header {
@@ -600,47 +614,6 @@ a:hover {color: black;}
     height: 50px; width: 50px;
 }
 
-.launch-stamp-disclaimer {
-    width: 80%; height: auto;
-    position: relative;
-    background-color: white;
-    margin: auto;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-}
-
-.launch-stamp {
-    width: 80%; height: auto;
-    position: relative;
-    background-color: white;
-    margin: auto;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-}
-
-.launch-content {
-    margin-left: 7rem;
-    margin-right: 7rem;
-    margin-top: 4rem;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.launch-content-one {
-    text-align: center;
-    margin-top: 3rem;
-}
-
-.launch-content-two {
-    align-items: center;
-    display: flex;
-    margin-left: 15rem;
-    margin-right: 15rem;
-    justify-content: space-around;
-    box-sizing: border-box;
-}
-
 .logIn-content {
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -652,4 +625,108 @@ a:hover {color: black;}
     padding-top: 3rem;
     padding-bottom: 3rem;
     margin: auto;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+input:checked + .slider {
+    background-color: orange;
+}
+ 
+input:focus + .slider {
+    box-shadow: 0 0 1px orange;
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+  }
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.user-text {
+    visibility: visible;
+    font-size: 20px;
+    margin-right: -4rem;
+}
+
+.printer-text {
+    visibility: visible;
+    font-size: 20px;
+    margin-left: -4rem;
+}
+
+.printer-text + input:checked {
+    visibility: visible;
+    font-size: 20px;
+    margin-left: -4rem;
+    opacity: 1;
+}
+
+.fa-question-circle-o {
+    color: orange;
+    margin-left: -4rem;
+}
+
+.tip-text {
+    width: 200px;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    background: rgb(235, 176, 67);
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 3px;
+    color: #fff;
+    transition: .5s ease-in-out;
+    box-sizing: border-box;
+    text-align: left;
+    transition: opacity .3s;
+}
+
+.fa-question-circle-o:hover + .tip-text{
+    visibility: visible;
+    opacity: 1;
 }
