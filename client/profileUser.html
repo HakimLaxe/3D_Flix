@@ -10,6 +10,7 @@
               crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript" src="script.js"></script>
     </head>
 
     <body>
@@ -41,18 +42,34 @@
         </div>
 
         <div class="home-page-alt">
-            <h5 style="text-align: center;"> Credenziali (elenco con nome, cognome, cristi e madonne) </h5>
-            <button type="button" class="collapsible">Le mie Richieste</button>
-            <div class="content">
-                <p>Peppino<br>Gesualdo<br>Astolfo</p>
-            </div>
-            <button type="button" class="collapsible">Le mie Chat</button>
-            <div class="content">
-                <p>Peppino<br>Gesualdo<br>Astolfo</p>
-            </div>
-            <button type="button" class="collapsible">I miei vecchi Stampatori</button>
-            <div class="content">
-                <p>Peppino<br>Gesualdo<br>Astolfo</p>
+            <div class="content-ProfileUser">
+                <!--Alert di completamento profilo-->
+                <div class="info-Header">
+                    <div>
+                        <figure ><input type="image" class="avatar"></figure>
+                        <label>Avatar</label>
+                        <div class="info-row">
+                            <input type="radio" id="studente">
+                            <label for="studente">Studente</label>
+                            <input type="radio" id="azienda">
+                            <label for="azienda">Azienda</label>
+                            <input type="radio" id="hobbista">
+                            <label for="hobbista">Hobbista</label>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="collapsible" onclick="collapsibleMenu()">Le mie Richieste</button>
+                <div class="content">
+                    <p>Peppino<br>Gesualdo<br>Astolfo</p>
+                </div>
+                <button type="button" class="collapsible" onclick="collapsibleMenu()">Le mie Chat</button>
+                <div class="content">
+                    <p>Peppino<br>Gesualdo<br>Astolfo</p>
+                </div>
+                <button type="button" class="collapsible" onclick="collapsibleMenu()">I miei vecchi Stampatori</button>
+                <div class="content">
+                    <p>Peppino<br>Gesualdo<br>Astolfo</p>
+                </div>
             </div>
         </div>
 
@@ -97,23 +114,6 @@
             </script>
             
         </footer>
-
-        <script>
-            var coll = document.getElementsByClassName("collapsible");
-            var i;
-            
-            for (i = 0; i < coll.length; i++) {
-              coll[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                  content.style.display = "none";
-                } else {
-                  content.style.display = "block";
-                }
-              });
-            }
-            </script>
         
     </body>
 </html>

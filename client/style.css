@@ -723,6 +723,37 @@ a:hover {color: black;}
     position: relative;
 }
 
+.content-ProfileUser {
+    width: 80%; height: auto;
+    position: relative;
+    background-color: white;
+    margin: auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    text-align: center;
+}
+
+.info-Header {
+    width: 600px;
+    height: auto;
+    border-radius: 5px;
+    border-style: solid;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 150px; 
+    height: 150px; 
+}
+
 .collapsible {
     background-color: #eee;
     color: #444;
