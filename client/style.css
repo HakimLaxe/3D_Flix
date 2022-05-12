@@ -733,25 +733,35 @@ a:hover {color: black;}
     text-align: center;
 }
 
-.info-Header {
-    width: 600px;
+.info-header {
+    position: relative;
+    width: 500px;
     height: auto;
     border-radius: 5px;
     border-style: solid;
+    border-width: 1px;
 }
 
 .info-row {
     display: flex;
-    align-items: center;
     justify-content: space-around;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.info-col {
+    text-align: left;
+    line-height: 2.5rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
 }
 
 .avatar {
     border-radius: 50%;
     width: 150px; 
-    height: 150px; 
+    height: 150px;
+    margin-top: 2rem;
 }
 
 .collapsible {
@@ -787,4 +797,49 @@ a:hover {color: black;}
   
 .active:after {
     content: "\2796";
+}
+
+.alert-complete {
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    background: rgb(241, 188, 91);
+    padding: 10px;
+    font-size: 15px;
+    margin-top: -3rem;
+    color: white;
+}
+
+.alert-text {
+    margin-left: 2rem;
+}
+
+.alert-close {
+    margin-left: 5rem;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s
+}
+
+.info-radio {
+    height: 15px;
+    width: 15px;
+}
+
+.info-radio-lbl {
+    margin-left: -4rem;
+}
+
+.fa-pencil {
+    margin-left: 1rem;
+    align-items: center;
+}
+
+.info-complete-box {
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
+    align-items: center;
+    line-height: 15px;
 }

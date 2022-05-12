@@ -34,7 +34,7 @@
                 <div class="header-navbar-end">
                     <div>
                         <button style="padding-right: 20px; background-color: transparent; 
-                            border-color: transparent; color: black; font-size: 20px;"> <a href="profileUser.html"> Profilo </a>  
+                            border-color: transparent; color: black; font-size: 20px;"> <a href="profileUserIncomplete.html"> Profilo </a>  
                         </button>
                     </div>
                 </div>
@@ -43,21 +43,37 @@
 
         <div class="home-page-alt">
             <div class="content-ProfileUser">
-                <!--Alert di completamento profilo-->
-                <div class="info-Header">
-                    <div>
-                        <figure ><input type="image" class="avatar"></figure>
+                <div class="alert-complete">
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                    <span class="alert-text">Per completare il tuo profilo puoi compilare alcuni campi</span>
+                    <span class="alert-close" onclick="this.parentElement.style.display='none';">&times;</span>
+                </div>
+                    <div class="info-header">
+                        <figure><input type="image" class="avatar"></figure>        <!--Da includere in un "Form", invio info aggiuntive-->
                         <label>Avatar</label>
-                        <div class="info-row">
-                            <input type="radio" id="studente">
-                            <label for="studente">Studente</label>
-                            <input type="radio" id="azienda">
-                            <label for="azienda">Azienda</label>
-                            <input type="radio" id="hobbista">
-                            <label for="hobbista">Hobbista</label>
+                        <div>
+                            <form class="info-row">      <!--Da includere in un "Form", invio info aggiuntive-->
+                                <input type="radio" id="studente" value="Studente" name="studente" class="info-radio">          
+                                <label for="studente" class="info-radio-lbl">Studente</label>
+                                <input type="radio" id="azienda" value="Azienda" name="azienda" class="info-radio">
+                                <label for="azienda" class="info-radio-lbl">Azienda</label>
+                                <input type="radio" id="hobbista" value="Hobbista" name="hobbista" class="info-radio">
+                                <label for="hobbista" class="info-radio-lbl">Hobbista</label>
+                            </form>
+                        </div>
+                        <div class="info-col">
+                            <label>Cognome: Cognome</label><br>
+                            <label>Nome: Nome</label><br>
+                            <label>Username: Username</label><br>
+                            <label>Password: **********</label>
+                            <span><i class="fa fa-pencil" aria-hidden="true" onclick=""></i></span>
+                            <a href="changePassword.html" style="color: dodgerBlue; font-size: 12px;">
+                                Modifica Password</a><br>
+                            <label>Città: <input type="text" class="info-complete-box"></label><br>
+                            <label>Provincia: <input type="text" class="info-complete-box"></label><br>
+                            <label>Regione: <input type="text" class="info-complete-box"></label>
                         </div>
                     </div>
-                </div>
                 <button type="button" class="collapsible" onclick="collapsibleMenu()">Le mie Richieste</button>
                 <div class="content">
                     <p>Peppino<br>Gesualdo<br>Astolfo</p>
