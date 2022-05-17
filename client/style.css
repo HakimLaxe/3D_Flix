@@ -1,8 +1,14 @@
-body {font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
 
-a {text-decoration: none; color: black;}
+a {
+    text-decoration: none; color: black;
+}
 
-a:hover {color: black;}
+a:hover {
+    color: black;
+}
 
 .dropdown-content {
     width: auto;
@@ -121,7 +127,7 @@ a:hover {color: black;}
 }
 
 .header-navbar-end {
-    padding-left: 1 rem;
+    padding-left: 1rem;
     flex: 1;
     position: relative;
     z-index: 2;
@@ -159,7 +165,9 @@ a:hover {color: black;}
     position: relative;
 }
 
-.wrapper-content {padding-top: 400px;}
+.wrapper-content {
+    padding-top: 400px;
+}
 
 .title {
     font-size: 40px;
@@ -729,17 +737,19 @@ a:hover {color: black;}
     background-color: white;
     margin: auto;
     padding-top: 3rem;
-    padding-bottom: 3rem;
     text-align: center;
 }
 
 .info-header {
-    position: relative;
-    width: 500px;
+    width: 460px;
     height: auto;
+    margin-left: 23rem;
+    margin-right: 23rem;
     border-radius: 5px;
     border-style: solid;
     border-width: 1px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .info-row {
@@ -758,45 +768,53 @@ a:hover {color: black;}
 }
 
 .avatar {
-    border-radius: 50%;
+    border-width: 1px;
+    border-style: solid;
     width: 150px; 
     height: 150px;
     margin-top: 2rem;
 }
 
-.collapsible {
-    background-color: #eee;
-    color: #444;
+.collapsible-menu {
+    display: flex;
+    gap: 1rem;
+    background-color: rgba(255, 166, 0, 0.695);
     cursor: pointer;
-    padding: 18px;
+    padding: 20px;
     width: 100%;
     border: none;
     text-align: left;
-    outline: none;
-    font-size: 15px;
+    font-size: 16   px;
 }
 
-.active, .collapsible:hover {
-    background-color: #ccc;
+.collapsible-menu:hover {
+    background-color: rgba(255, 166, 0, 0.478);
 }
 
-.content {
-    padding: 0 18px;
+.active{
+    background-color: rgba(255, 166, 0, 0.695);
+}
+
+.content-collapsible {
+    padding: 2rem;
     display: none;
     overflow: hidden;
     background-color: #f1f1f1;
 }
 
-.collapsible:after {
-    content: '\02795';
-    font-size: 13px;
-    color: white;
-    float: right;
+.content-elements {
+    display: flex;
+    justify-content: space-around;
+}
+
+.collapsible-menu:after {
+    content: "\02795";
+    font-size: 15px;
     margin-left: 5px;
 }
   
 .active:after {
-    content: "\2796";
+    content: "\02796";
 }
 
 .alert-complete {
@@ -812,15 +830,6 @@ a:hover {color: black;}
 
 .alert-text {
     margin-left: 2rem;
-}
-
-.alert-close {
-    margin-left: 5rem;
-    font-weight: bold;
-    font-size: 22px;
-    line-height: 20px;
-    cursor: pointer;
-    transition: 0.3s
 }
 
 .info-radio {

@@ -270,7 +270,7 @@ function submitSigin(){
 
 
 function collapsibleMenu() {
-    var coll = document.getElementsByClassName("collapsible");
+    var coll = document.getElementsByClassName("collapsible-menu");
     var i;
             
     for (i = 0; i < coll.length; i++) {

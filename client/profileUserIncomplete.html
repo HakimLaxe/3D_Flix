@@ -46,45 +46,53 @@
                 <div class="alert-complete">
                     <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
                     <span class="alert-text">Per completare il tuo profilo puoi compilare alcuni campi</span>
-                    <span class="alert-close" onclick="this.parentElement.style.display='none';">&times;</span>
                 </div>
-                    <div class="info-header">
-                        <figure><input type="image" class="avatar"></figure>        <!--Da includere in un "Form", invio info aggiuntive-->
-                        <label>Avatar</label>
-                        <div>
-                            <form class="info-row">      <!--Da includere in un "Form", invio info aggiuntive-->
-                                <input type="radio" id="studente" value="Studente" name="studente" class="info-radio">          
-                                <label for="studente" class="info-radio-lbl">Studente</label>
-                                <input type="radio" id="azienda" value="Azienda" name="azienda" class="info-radio">
-                                <label for="azienda" class="info-radio-lbl">Azienda</label>
-                                <input type="radio" id="hobbista" value="Hobbista" name="hobbista" class="info-radio">
-                                <label for="hobbista" class="info-radio-lbl">Hobbista</label>
-                            </form>
-                        </div>
-                        <div class="info-col">
-                            <label>Cognome: Cognome</label><br>
-                            <label>Nome: Nome</label><br>
-                            <label>Username: Username</label><br>
-                            <label>Password: **********</label>
-                            <span><i class="fa fa-pencil" aria-hidden="true" onclick=""></i></span>
-                            <a href="changePassword.html" style="color: dodgerBlue; font-size: 12px;">
-                                Modifica Password</a><br>
-                            <label>Città: <input type="text" class="info-complete-box"></label><br>
-                            <label>Provincia: <input type="text" class="info-complete-box"></label><br>
-                            <label>Regione: <input type="text" class="info-complete-box"></label>
+                <div class="info-header">
+                    <input type="image" class="avatar" alt="Avatar">        <!--Da includere in un "Form", invio info aggiuntive-->
+                    <div>
+                        <form class="info-row">      <!--Da includere in un "Form", invio info aggiuntive-->
+                            <input type="radio" id="studente" value="Studente" name="studente" class="info-radio">          
+                            <label for="studente" class="info-radio-lbl">Studente</label>
+                            <input type="radio" id="azienda" value="Azienda" name="azienda" class="info-radio">
+                            <label for="azienda" class="info-radio-lbl">Azienda</label>
+                            <input type="radio" id="hobbista" value="Hobbista" name="hobbista" class="info-radio">
+                            <label for="hobbista" class="info-radio-lbl">Hobbista</label>
+                        </form>
+                    </div>
+                    <div class="info-col">
+                        <label>Cognome: Cognome</label><br>
+                        <label>Nome: Nome</label><br>
+                        <label>Username: Username</label><br>
+                        <label>Password: Password</label>
+                        <span><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                        <a href="changePassword.html" style="color: dodgerBlue; font-size: 12px;">
+                            Modifica Password</a><br>
+                        <form>
+                            <label>Città: <input type="text" class="info-complete-box" style="margin-left: 3rem;"></label><br>
+                            <label>Provincia: <input type="text" class="info-complete-box" style="margin-left: 1.1rem;"></label><br>
+                            <label>Regione: <input type="text" class="info-complete-box" style="margin-left: 1.5rem;"></label><br><br>
+                            <input type="submit" value="Aggiorna Profilo" class="button-form" style="width: 9rem; font-size: 15px;">
+                        </form>
+                    </div>
+                </div>
+                <div class="info-collapsible">
+                    <button type="button" class="collapsible-menu" onclick="collapsibleMenu()">Le mie Richieste</button>
+                    <div class="content-collapsible">
+                        <div class="content-elements">
+                            <p>Peppino</p><p>Gesualdo</p><p>Astolfo</p>
                         </div>
                     </div>
-                <button type="button" class="collapsible" onclick="collapsibleMenu()">Le mie Richieste</button>
-                <div class="content">
-                    <p>Peppino<br>Gesualdo<br>Astolfo</p>
+                    <button type="button" class="collapsible-menu" onclick="collapsibleMenu()">Le mie Chat</button>
+                    <div class="content-collapsible">
+                        <p>Peppino<br>Gesualdo<br>Astolfo</p>
+                    </div>
+                    <button type="button" class="collapsible-menu" onclick="collapsibleMenu()">I miei vecchi Stampatori</button>
+                    <div class="content-collapsible">
+                        <p>Peppino<br>Gesualdo<br>Astolfo</p>
+                    </div>
                 </div>
-                <button type="button" class="collapsible" onclick="collapsibleMenu()">Le mie Chat</button>
-                <div class="content">
-                    <p>Peppino<br>Gesualdo<br>Astolfo</p>
-                </div>
-                <button type="button" class="collapsible" onclick="collapsibleMenu()">I miei vecchi Stampatori</button>
-                <div class="content">
-                    <p>Peppino<br>Gesualdo<br>Astolfo</p>
+                <div class="info-row">
+                    <button class="button-form" onclick="">Esci</button>        <!--Logout da implementare-->
                 </div>
             </div>
         </div>
