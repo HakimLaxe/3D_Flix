@@ -1,6 +1,18 @@
 const { count } = require("console");
 const { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } = require("constants");
 
+const singInState = 0;
+
+function onClickSignInMode(){
+    console.log("OK GIANNI");
+
+    if (singInState==0){
+        singInState = 1;
+    } else {
+        singInState = 0;
+    }
+}
+
 function onCloseModal(){
 
     document.getElementById("errorModal").close();
