@@ -323,13 +323,18 @@ a:hover {
     padding: 1.5rem;
 }
 
+.element-block-alt {
+    border-radius: 5px;
+    background-color: white;
+    padding: 1.5rem;
+}
+
 .element-header {
     margin-bottom: 0;
     position: relative;
 }
 
 .element-img {
-    display: block;
     object-fit: cover;
     width: 100px;
     height: 100px;
@@ -418,9 +423,25 @@ a:hover {
     align-items: center;
 }
 
+.vendor-info-alt {
+    align-items: center;
+    padding-bottom: 0.5rem;
+}
+
+.vendor-img {
+    padding-bottom: 0.5rem;
+}
+
 .vendor-name {
     white-space: nowrap;
     margin-top: 0.5rem;
+    word-wrap: break-word;
+    text-align: center;
+    font-weight: 300;
+}
+
+.vendor-name-alt {
+    white-space: nowrap;
     word-wrap: break-word;
     text-align: center;
     font-weight: 300;
@@ -752,6 +773,17 @@ a:hover {
     margin-bottom: 2rem;
 }
 
+.info-header-alt { 
+    width: 460px;
+    height: auto;
+    margin-left: 23rem;
+    margin-right: 23rem;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    margin-bottom: 3rem;
+}
+
 .info-row {
     display: flex;
     justify-content: space-around;
@@ -839,6 +871,10 @@ a:hover {
 
 .info-radio-lbl {
     margin-left: -4rem;
+}
+
+.info-lbl {
+    text-align: center;
 }
 
 .fa-pencil {
