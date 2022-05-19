@@ -20,7 +20,7 @@ PRIMARY KEY(`Nickname`)
 );
 
 INSERT INTO User(Name,Surname, NickName, PasswordHash, Mail, City, Prov)
-VALUES("Mario","Rossi","RossiM01","$2b$10$dqG1JZ/Yu9lElWFPIIp/GeNV8mb.HvviH0qAt9JJD.QTb9Uo7VUra","MarioRossi@mail.com","Roma","RO");
+VALUES("Mario","Rossi","RossiM01","$2b$10$bog3ld9RVyCHqXt6iHhHRu7Fay14bwca6t.ApBS.6KR30m3VnXa1i","MarioRossi@mail.com","Roma","RO");
 
 INSERT INTO User(Name,Surname, NickName, PasswordHash, Mail, City, Prov)
 VALUES("Filippo","Bianchi","BFlixy","$2b$10$dqG1JZ/Yu9lElWFPIIp/GeNV8mb.HvviH0qAt9JJD.QTb9Uo7VUra","BianchiFil@mail.com","Milano","MI");
