@@ -87,14 +87,15 @@
                                             <label style="font-size: 17px;"><b style="font-weight: 500;">
                                                 Sei un...</b><br>Scegli tra le tipologie di utente disponibili</label>
                                             <i class="fa fa-question-circle-o fa-lg" aria-hidden="true"></i>
-                                            <span class="tip-text" style="align-items: flex-start;">Cliccando lo Switch selezioni il tipo di account</span>
+                                            <span class="tip-text" style="align-items: flex-start;">Cliccando i pulsanti selezioni il tipo di account</span>
                                         </div>
                                         <div class="modal-row-alter">
-                                            <div class="switch-button">
-                                                <input class="switch-button-checkbox" type="checkbox"></input>
-                                                <label class="switch-button-label" for="">
-                                                    <button class="switch-button-label-span" onclick="onClickSignInMode()">User</button>
-                                                </label>
+                                            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
+                                                <label class="btn btn-outline-primary" for="btnradio1">User</label>
+                                              
+                                                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                                                <label class="btn btn-outline-primary" for="btnradio2">Printer</label>
                                             </div>
                                         </div>
                                         <div class="modal-row">
@@ -305,19 +306,29 @@
                                 </div>
                             </div>
                             <div class="element-content">
-                                <h6 style="font-weight: 400;"> Le Stampanti </h6>
+                                <label style="font-weight: 400; margin-bottom: 1rem;"> Le Stampanti </label>
                                 <div class="list-content">
                                     <figure class="list-content-container">
                                         <a href=""><img src=""></a>
                                     </figure>
-                                    <div id="slider" class="slide">
-                                        <ul> 
-                                            <li><img src="images/Materiale Sito web/Facebook_logo.png" alt=""></li>
-                                            <li><img src="images/Materiale Sito web/Instagram_logo.png" alt=""></li>
-                                            <li><img src="images/Materiale Sito web/Tiktok_logo.png" alt=""></li>
-                                        </ul>
-                                        <a id="prev" href="">&#8249;</a> <!--Fare script per animazioni frecce-->
-                                        <a id="next" href="">&#8250;</a>
+                                    <div id="myCarousel1" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="images/Materiale Sito web/stampaFDM.jpg" class="d-block w-100">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/Materiale Sito web/stampaSLA.jpg" class="d-block w-100">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/Materiale Sito web/stampaSLS.jpg" class="d-block w-100">
+                                            </div>
+                                        </div>
+                                        <a href="#myCarousel1" class="carousel-control-prev" role="button" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        </a>
+                                        <a href="#myCarousel1" class="carousel-control-next" role="button" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -363,19 +374,29 @@
                                 </div>
                             </div>
                             <div class="element-content">
-                                <h6 style="font-weight: 400; margin-bottom: 1rem;"> Le Stampanti </h6>
+                                <label style="font-weight: 400; margin-bottom: 1rem;"> Le Stampanti </label>
                                 <div class="list-content">
                                     <figure class="list-content-container">
                                         <a href=""><img src=""></a>
                                     </figure>
-                                    <div id="slider" class="slide">
-                                        <ul> 
-                                            <li><img src="images/Materiale Sito web/Facebook_logo.png" alt=""></li>
-                                            <li><img src="images/Materiale Sito web/Instagram_logo.png" alt=""></li>
-                                            <li><img src="images/Materiale Sito web/Tiktok_logo.png" alt=""></li>
-                                        </ul>
-                                        <a id="prev" href="">&#8249;</a> <!--Fare script per animazioni frecce-->
-                                        <a id="next" href="">&#8250;</a>
+                                    <div id="myCarousel2" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="images/Materiale Sito web/Banner alto.jpg" class="d-block w-100">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/Materiale Sito web/Instagram_logo.png" class="d-block w-100">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/Materiale Sito web/Tiktok_logo.png" class="d-block w-100">
+                                            </div>
+                                        </div>
+                                        <a href="#myCarousel2" class="carousel-control-prev" role="button" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        </a>
+                                        <a href="#myCarousel2" class="carousel-control-next" role="button" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -421,19 +442,29 @@
                                 </div>
                             </div>
                             <div class="element-content">
-                                <h6 style="font-weight: 400; margin-bottom: 1rem;"> Le Stampanti </h6>
+                                <label style="font-weight: 400; margin-bottom: 1rem;"> Le Stampanti </label>
                                 <div class="list-content">
                                     <figure class="list-content-container">
                                         <a href=""><img src=""> </a>
                                     </figure>
-                                    <div id="slider" class="slide">
-                                        <ul> 
-                                            <li><img src="images/Materiale Sito web/Facebook_logo.png" alt=""></li>
-                                            <li><img src="images/Materiale Sito web/Instagram_logo.png" alt=""></li>
-                                            <li><img src="images/Materiale Sito web/Tiktok_logo.png" alt=""></li>
-                                        </ul>
-                                        <a id="prev" href="">&#8249;</a> <!--Fare script per animazioni frecce-->
-                                        <a id="next" href="">&#8250;</a>
+                                    <div id="myCarousel3" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="images/Materiale Sito web/Banner alto.jpg" class="d-block w-100">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/Materiale Sito web/Instagram_logo.png" class="d-block w-100">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/Materiale Sito web/Tiktok_logo.png" class="d-block w-100">
+                                            </div>
+                                        </div>
+                                        <a href="#myCarousel3" class="carousel-control-prev" role="button" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        </a>
+                                        <a href="#myCarousel3" class="carousel-control-next" role="button" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
