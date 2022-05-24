@@ -88,14 +88,15 @@
                                             <p style="font-size: 17px;"><b style="font-weight: 500;">
                                                 Sei un...</b><br>Scegli tra le tipologie di utente disponibili</p>
                                             <i class="fa fa-question-circle-o fa-lg" aria-hidden="true"></i>
-                                            <span class="tip-text">Cliccando lo Switch selezioni il tipo di account</span>
+                                            <span class="tip-text">Cliccando i pulsanti selezioni il tipo di account</span>
                                         </div>
                                         <div class="modal-row-alter">
-                                            <div class="switch-button">
-                                                <input class="switch-button-checkbox" type="checkbox"></input>
-                                                <label class="switch-button-label" for="">
-                                                    <span class="switch-button-label-span">User</span>
-                                                </label>
+                                            <div class="up-choose">
+                                                <input type="radio" name="btnradio" id="btnradio1" onclick="onClickSignInMode()">
+                                                <label for="btnradio1">User</label>
+                                              
+                                                <input type="radio" name="btnradio" id="btnradio2" onclick="onClickSignInMode()">
+                                                <label for="btnradio2">Printer</label>
                                             </div>
                                         </div>
                                         <div class="modal-row">
