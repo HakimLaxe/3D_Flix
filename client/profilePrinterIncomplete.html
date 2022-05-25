@@ -10,6 +10,7 @@
               crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript" src="script.js"></script>
     </head>
 
     <body>
@@ -18,7 +19,7 @@
             <div class="header-navbar">
                 <div class="header-navbar-start">
                     <div class="header-navbar-logo">
-                        <a href="user.html"><img width="228" height="58" class="logo" 
+                        <a href="printer.html"><img width="228" height="58" class="logo" 
                             src="images/Materiale Sito web/HEADER_Tavola disegno 1.png"></a>
                     </div>
                 </div>
@@ -33,7 +34,7 @@
                 <div class="header-navbar-end">
                     <div>
                         <button style="padding-right: 20px; background-color: transparent; 
-                            border-color: transparent; color: black; font-size: 20px;"> <a href="profilePrinter.html"> Profilo </a>  
+                            border-color: transparent; color: black; font-size: 20px;"> <a href=""> Profilo </a>  
                         </button>
                     </div>
                 </div>
@@ -48,15 +49,17 @@
                 </div>
                 <div class="info-header">
                     <input type="image" class="avatar" alt="Avatar">        <!--Da includere in un "Form", invio info aggiuntive-->
-                    <div>
-                        <form class="info-row">      <!--Da includere in un "Form", invio info aggiuntive-->
-                            <input type="radio" id="studente" value="Studente" name="studente" class="info-radio">          
-                            <label for="studente" class="info-radio-lbl">Studente</label>
-                            <input type="radio" id="azienda" value="Azienda" name="azienda" class="info-radio">
-                            <label for="azienda" class="info-radio-lbl">Azienda</label>
-                            <input type="radio" id="hobbista" value="Hobbista" name="hobbista" class="info-radio">
-                            <label for="hobbista" class="info-radio-lbl">Hobbista</label>
-                        </form>
+                    <div class="info-row">
+                        <div class="up-choose">                             <!--Da includere in un "Form", invio info aggiuntive-->
+                            <input type="radio" name="btnradio" id="btnradio1" onclick="onClickSignInMode()">
+                            <label for="btnradio1">Privato</label>
+                            
+                            <input type="radio" name="btnradio" id="btnradio2" onclick="onClickSignInMode()">
+                            <label for="btnradio2">Laboratorio</label>
+
+                            <input type="radio" name="btnradio" id="btnradio3" onclick="onClickSignInMode()">
+                            <label for="btnradio3">Azienda</label>
+                        </div>
                     </div>
                     <div class="info-col">
                         <label>Cognome: Cognome</label><br>
@@ -81,11 +84,34 @@
                     </div>
                     <button type="button" class="collapsible-menu" onclick="collapsibleMenu()">Le mie Offerte</button>
                     <div class="content-collapsible">
-
+                        
                     </div>
                     <button type="button" class="collapsible-menu" onclick="collapsibleMenu()">Le mie Chat</button>
                     <div class="content-collapsible">
-
+                        <div class="content-elements">
+                            <div class="element-block-alt">
+                                <div class="vendor-info-alt">
+                                    <h6 class="vendor-name-alt">
+                                        <a href="" style="font-size: 18px; font-weight: 400; text-decoration: none; color: black;"> <!--Link venditore-->
+                                            Ginopippo
+                                        </a>
+                                        <h6 style="font-size: 17px; font-weight: 300;">Visiona la Chat con questo Printer</h6>
+                                    </h6>
+                                    <button class="button-form" style="margin-top: 1rem;">Chat</button>
+                                </div>
+                            </div>
+                            <div class="element-block-alt">
+                                <div class="vendor-info-alt">
+                                    <h6 class="vendor-name-alt">
+                                        <a href="" style="font-size: 18px; font-weight: 400; text-decoration: none; color: black;"> <!--Link venditore-->
+                                            Ginopippo
+                                        </a>
+                                        <h6 style="font-size: 17px; font-weight: 300;">Visiona la Chat con questo Printer</h6>
+                                    </h6>
+                                    <button class="button-form" style="margin-top: 1rem;">Chat</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <button type="button" class="collapsible-menu" onclick="collapsibleMenu()">Impostazioni</button>
                     <div class="content-collapsible">

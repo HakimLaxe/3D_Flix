@@ -49,15 +49,17 @@
                 </div>
                 <div class="info-header">
                     <input type="image" class="avatar" alt="Avatar">        <!--Da includere in un "Form", invio info aggiuntive-->
-                    <div>
-                        <form class="info-row">      <!--Da includere in un "Form", invio info aggiuntive-->
-                            <input type="radio" id="studente" value="Studente" name="studente" class="info-radio">          
-                            <label for="studente" class="info-radio-lbl">Studente</label>
-                            <input type="radio" id="azienda" value="Azienda" name="azienda" class="info-radio">
-                            <label for="azienda" class="info-radio-lbl">Azienda</label>
-                            <input type="radio" id="hobbista" value="Hobbista" name="hobbista" class="info-radio">
-                            <label for="hobbista" class="info-radio-lbl">Hobbista</label>
-                        </form>
+                    <div class="info-row">
+                        <div class="up-choose">                             <!--Da includere in un "Form", invio info aggiuntive-->
+                            <input type="radio" name="btnradio" id="btnradio1" onclick="onClickSignInMode()">
+                            <label for="btnradio1">Privato</label>
+                            
+                            <input type="radio" name="btnradio" id="btnradio2" onclick="onClickSignInMode()">
+                            <label for="btnradio2">Laboratorio</label>
+
+                            <input type="radio" name="btnradio" id="btnradio3" onclick="onClickSignInMode()">
+                            <label for="btnradio3">Azienda</label>
+                        </div>
                     </div>
                     <div class="info-col">
                         <label>Cognome: Cognome</label><br>

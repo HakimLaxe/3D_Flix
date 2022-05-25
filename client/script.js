@@ -1,5 +1,6 @@
 const { count } = require("console");
 const { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } = require("constants");
+const { get } = require("http");
 
 var singInState = 0;
 
@@ -83,7 +84,7 @@ function submitLogin(){
         (response) => { 
             isUserValidated(loginUsername).then( validationValue => {
                 if (validationValue){
-                    location.replace("./user.html");
+                    location.replace("./printer.html");
                 }
                 else {
                     alertMessage("Conferma la mail prima di fare l'accesso");
