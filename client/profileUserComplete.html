@@ -44,10 +44,17 @@
         <div class="home-page-alt">
             <div class="content-ProfileUser">
                 <div class="info-header-alt">
-                    <img src="" class="avatar">
-                    <div>
-                        <div class="info-row">          
-                            <label for="studente" class="info-lbl">Studente/Azienda/Hobbista</label>
+                    <input type="image" class="avatar" alt="Avatar">        <!--Da includere in un "Form", invio info aggiuntive-->
+                    <div class="info-row">          
+                        <div class="up-choose">                             <!--Da includere in un "Form", invio info aggiuntive-->
+                            <input type="radio" name="btnradio" id="btnradio1" onclick="onClickSignInMode()">
+                            <label for="btnradio1">Studente</label>
+                            
+                            <input type="radio" name="btnradio" id="btnradio2" onclick="onClickSignInMode()">
+                            <label for="btnradio2">Azienda</label>
+
+                            <input type="radio" name="btnradio" id="btnradio3" onclick="onClickSignInMode()">
+                            <label for="btnradio3">Hobbista</label>
                         </div>
                     </div>
                     <div class="info-col">
