@@ -43,31 +43,27 @@
 
         <div class="home-page-alt">
             <div class="content-ProfileUser">
-                <div class="info-header-alt">
-                    <input type="image" class="avatar" alt="Avatar">        <!--Da includere in un "Form", invio info aggiuntive-->
-                    <div class="info-row">          
-                        <div class="up-choose">                             <!--Da includere in un "Form", invio info aggiuntive-->
-                            <input type="radio" name="btnradio" id="btnradio1" onclick="onClickSignInMode()">
-                            <label for="btnradio1">Studente</label>
-                            
-                            <input type="radio" name="btnradio" id="btnradio2" onclick="onClickSignInMode()">
-                            <label for="btnradio2">Azienda</label>
-
-                            <input type="radio" name="btnradio" id="btnradio3" onclick="onClickSignInMode()">
-                            <label for="btnradio3">Hobbista</label>
+                <div class="info-collapsible">
+                    <button type="button" class="collapsible-menu" onclick="collapsibleMenu()">Informazioni Profilo</button>
+                    <div class="content-collapsible">
+                        <div class="info-header-alt">
+                            <input type="image" class="avatar" alt="Avatar">        <!--Da includere in un "Form", invio info aggiuntive-->
+                            <div class="info-row">          
+                                <label>Studente/Azienda/Hobbista</label>
+                            </div>
+                            <div class="info-col">
+                                <label>Cognome: Cognome</label><br>
+                                <label>Nome: Nome</label><br>
+                                <label>Username: Username</label><br>
+                                <label>Password: Password</label>
+                                <span><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                                <a href="changePassword.html" style="color: dodgerBlue; font-size: 12px;">
+                                    Modifica Password</a><br>
+                                <label>Città: Città</label><br>
+                                <label>Provincia: Provincia</label><br>
+                                <label>Regione: Regione</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="info-col">
-                        <label>Cognome: Cognome</label><br>
-                        <label>Nome: Nome</label><br>
-                        <label>Username: Username</label><br>
-                        <label>Password: Password</label>
-                        <span><i class="fa fa-pencil" aria-hidden="true"></i></span>
-                        <a href="changePassword.html" style="color: dodgerBlue; font-size: 12px;">
-                            Modifica Password</a><br>
-                        <label>Città: Città</label><br>
-                        <label>Provincia: Provincia</label><br>
-                        <label>Regione: Regione</label>
                     </div>
                 </div>
                 <div class="info-collapsible">
