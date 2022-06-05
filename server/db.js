@@ -24,6 +24,13 @@ const createUser = function (row) {
     return { username: row.Nickname, password: row.PasswordHash, name: row.Name, surname: row.Surname, mail: row.Mail, city: row.City, prov: row.Prov };
 }
 
+const createMessages = function (rows) {
+
+    let messages = []
+    rows.map( row => messages.push({ id: row.messageID, src: row.srcNickname, dest: row.destNickname, message : row.messageContent}))
+    return messages;
+}
+
 function getUser(username) {
     return new Promise((resolve, reject) => {
         let sql = 'SELECT * FROM User WHERE Nickname = ?';
@@ -147,6 +154,23 @@ function updateMail (username, mail){
     });
 };
 
+function getUserMessages(username){
+    return new Promise((resolve, reject) => {
+        let sql = 'SELECT * FROM Message WHERE srcNickname = ? OR destNickname = ?'
+        
+        connection.query(sql, [username, username] ,function (err, result) {
+            if (err) {
+                console.log(err);
+                reject(err);
+            }
+            else{
+                const messages = createMessages(result);
+                resolve(messages); 
+            }
+        });
+    });    
+};
+
 function encryptPassword(password){
     let hash = bcrypt.hashSync(password, 10);
     return hash;
@@ -155,6 +179,7 @@ function encryptPassword(password){
 function checkPassword(user, password){
     return bcrypt.compare(password, user.password);
 }
+
 
 exports.getUser = getUser;
 exports.verifySiginCredential = verifySiginCredential;
@@ -165,3 +190,4 @@ exports.insertValidateUser = insertValidateUser;
 exports.getValidationCode = getValidationCode;
 exports.deleteValidatedUser = deleteValidatedUser;
 exports.updateMail = updateMail;
+exports.getUserMessages = getUserMessages;

@@ -109,7 +109,6 @@ app.get('/api/verifyUser/:user', (req,res) => {
 });
 
 app.get('/api/verificationRequest/:user/:code', (req,res) => {
-  console.log("entro accuddi");
   db.getValidationCode(req.params.user)
     .then( code => {
         if ( code == req.params.code ){
@@ -131,6 +130,40 @@ app.post('/api/logout', (req, res) => {
     res.clearCookie('token').end();
 });
 
+app.get('/api/getChats/:user', (req,res) => {
+  db.getUserMessages(req.params.user)
+    .then( chats => {
+
+        let messageListeners = []
+        let chatsContent = []
+        let chatsMap = new Map();
+        chats.map( chat => chat.src === req.params.user ? messageListeners.push(chat.dest) : messageListeners.push(chat.src) )
+        messageListeners = [...new Set(messageListeners)];
+        for ( let messageListener of messageListeners ){
+          chats.map( chat => {
+            if ( chat.src === messageListener  )
+                chatsContent.push({type: 'R', message: chat.message})
+            
+            if ( chat.dest === messageListener )
+                chatsContent.push({type: 'S', message: chat.message})
+          });
+      
+          chatsMap.set(messageListener, chatsContent)
+          chatsContent = []
+        }
+        console.log(chatsMap)
+        res.json({"result": true});
+  })
+
+    .catch( (err) => {
+        console.log(err);
+        res.status(500).json({
+          errors: [{'msg': err}],
+      });
+    });  
+
+});
+
 // For the rest of the code, all APIs require authentication
 app.use(
     jwt({
@@ -140,7 +173,9 @@ app.use(
     })
   );
 
-// To return a better object in case of errors
+
+
+  // To return a better object in case of errors
 app.use(function (err, req, res, next) {
     if (err.name === 'UnauthorizedError') {
       res.status(403).json(authErrorObj);
