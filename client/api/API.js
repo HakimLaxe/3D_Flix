@@ -78,3 +78,13 @@ async function validateUser(username, code){
     const valueJson = await response.json();
     return valueJson.verificationRequest;
 }
+
+async function getUserChat(username){
+
+    let requestUrl = url + `/api/user/getChats/${username}`;
+    const response = await fetch(requestUrl);
+    const valueJson = await response.json();
+    return valueJson;   
+}
+
+async function insertChat(srcUsername, destUsername, message){}

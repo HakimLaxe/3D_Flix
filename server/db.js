@@ -171,6 +171,23 @@ function getUserMessages(username){
     });    
 };
 
+function insertMessage (srcUsername, destUsername, message){
+    return new Promise((resolve, reject) => {
+        let sql = 'INSERT INTO Message(srcNickname,destNickname,messageContent) VALUES(?,?,?)';
+        
+        connection.query(sql, [srcUsername,destUsername,message] ,function (err, result) {
+            if (err) {
+                console.log(err);
+                reject(err);
+            }
+
+            else {
+                resolve(true);    
+            }
+        });
+    });
+};
+
 function encryptPassword(password){
     let hash = bcrypt.hashSync(password, 10);
     return hash;
@@ -191,3 +208,4 @@ exports.getValidationCode = getValidationCode;
 exports.deleteValidatedUser = deleteValidatedUser;
 exports.updateMail = updateMail;
 exports.getUserMessages = getUserMessages;
+exports.insertMessage = insertMessage;

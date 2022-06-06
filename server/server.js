@@ -130,7 +130,7 @@ app.post('/api/logout', (req, res) => {
     res.clearCookie('token').end();
 });
 
-app.get('/api/getChats/:user', (req,res) => {
+app.get('/api/user/getChats/:user', (req,res) => {
   db.getUserMessages(req.params.user)
     .then( chats => {
 
@@ -151,9 +151,9 @@ app.get('/api/getChats/:user', (req,res) => {
           chatsMap.set(messageListener, chatsContent)
           chatsContent = []
         }
-        console.log(chatsMap)
-        res.json({"result": true});
-  })
+        const json = JSON.stringify(Object.fromEntries(chatsMap));
+        res.json(json);
+    })
 
     .catch( (err) => {
         console.log(err);
@@ -162,6 +162,24 @@ app.get('/api/getChats/:user', (req,res) => {
       });
     });  
 
+});
+
+app.post('/api/user/insertMessage', (req, res) => {
+  
+  const srcUsername = req.body.srcUsername;
+  const destUsername = req.body.destUsername;
+  const message = req.body.messageContent;
+
+  db.insertMessage(srcUsername,destUsername,message).then((result) => {
+    res.json({"insertMessage": true});
+  })
+  .catch(
+    // Delay response when wrong user/pass is sent to avoid fast guessing attempts
+    (err) => {
+        console.log("Error Catched in /api/user/insertMessage")
+        new Promise((resolve) => {setTimeout(resolve, 1000)}).then(() => res.status(401).json(authErrorObj))
+    }
+  );
 });
 
 // For the rest of the code, all APIs require authentication

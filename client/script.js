@@ -5,7 +5,6 @@ const { get } = require("http");
 var singInState = 0;
 
 function onClickSignInMode(){
-    console.log("OK GIANNI");
     if (singInState == 0){
         singInState = 1;
     } else {
@@ -25,6 +24,7 @@ function genericMessage(message){
 }
 
 function alertMessage(message){
+    //getUserChat("GinoPippo").then( response => console.log(response))
     let modal = document.getElementById("errorModal");
     document.getElementById("modalTitle").innerHTML = "Errore!";
     document.getElementById("errorMessage").innerHTML = message;
