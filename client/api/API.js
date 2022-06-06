@@ -84,7 +84,28 @@ async function getUserChat(username){
     let requestUrl = url + `/api/user/getChats/${username}`;
     const response = await fetch(requestUrl);
     const valueJson = await response.json();
-    return valueJson;   
+    let parsedResponse = JSON.parse(valueJson)
+    const mapResponse = new Map(Object.entries(parsedResponse));
+    return mapResponse;   
 }
 
-async function insertChat(srcUsername, destUsername, message){}
+async function insertChat(srcUser, destUser, message){
+    return new Promise((resolve, reject) => {
+        fetch(url + '/api/user/insertMessage', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({srcUsername: srcUser, destUsername: destUser, messageContent: message})
+        }).then((response) => {
+            if (response.ok) {
+                resolve(true);
+            } else {
+                // analyze the cause of error
+                response.json()
+                    .then((obj) => { reject(obj); }) // error msg in the response body
+                    .catch((err) => { reject({ errors: [{ param: "Application", msg: "Cannot parse server response" }] }) }); // something else
+            }
+        });
+    });    
+}

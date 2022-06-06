@@ -4,6 +4,28 @@ const { get } = require("http");
 
 var singInState = 0;
 
+/* Dopo che viene inviato un messaggio */
+function addMessage(sender, receiver, message){
+
+    insertChat(sender,receiver,message).then( response => {
+        if (!response){
+            alertMessage("Il messaggio non è stato inviato correttamente")
+        }
+    })
+
+}
+/* Per ottenere tutte le chat dell'utente */
+function displayChats(username){
+
+    getUserChat(username).then( response => {
+
+        for (const [key, value] of response.entries()) {
+            console.log(key)
+            console.log(value)
+        }
+    })
+}
+
 function onClickSignInMode(){
     if (singInState == 0){
         singInState = 1;
@@ -24,7 +46,7 @@ function genericMessage(message){
 }
 
 function alertMessage(message){
-    //getUserChat("GinoPippo").then( response => console.log(response))
+
     let modal = document.getElementById("errorModal");
     document.getElementById("modalTitle").innerHTML = "Errore!";
     document.getElementById("errorMessage").innerHTML = message;
