@@ -416,6 +416,63 @@ a:hover {
     font-weight: 300;
 }
 
+.fa-comment {
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+    color: rgb(255, 115, 0);
+    cursor: pointer;
+    opacity: 1;
+    text-decoration: none;
+}
+
+.chat-style {
+    height: 300px;
+    width: 250px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 0.5px;
+    display: none;
+    position: absolute;
+    z-index: 200;
+    background-color: white;
+    margin-left: 2rem;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.chat-bot-command {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    vertical-align: bottom;
+    bottom: 0px;
+    position: absolute;
+    scroll-behavior: smooth;
+}
+
+.chat-txtfield {
+    width: 75%;
+    border-bottom-left-radius: 10px;
+    border-width: 0.5px;
+    height: 35px;
+}
+
+.chat-btnenter {
+    width: 25%;
+    border-bottom-right-radius: 10px;
+    border-width: 0.5px;
+    height: 35px;
+    background-color: orange;
+}
+
+.fa-heart {
+    margin-top: 0.5rem;
+    color: rgb(255, 115, 0);
+    cursor: pointer;
+    opacity: 1;
+    text-decoration: none;
+}
+
 .content-footer {
     display: block;
     align-items: center;

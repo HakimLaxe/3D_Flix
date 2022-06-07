@@ -86,7 +86,7 @@ async function getUserChat(username){
     const valueJson = await response.json();
     let parsedResponse = JSON.parse(valueJson)
     const mapResponse = new Map(Object.entries(parsedResponse));
-    return mapResponse;   
+    return mapResponse;
 }
 
 async function insertChat(srcUser, destUser, message){

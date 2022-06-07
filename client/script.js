@@ -26,6 +26,16 @@ function displayChats(username){
     })
 }
 
+function openChat(){
+    
+    var div = document.getElementById("chat");
+    if (div.style.display !== "none") {
+        div.style.display = "none";
+    } else {
+        div.style.display = "block";
+    }
+}
+
 function onClickSignInMode(){
     if (singInState == 0){
         singInState = 1;
@@ -106,7 +116,7 @@ function submitLogin(){
         (response) => { 
             isUserValidated(loginUsername).then( validationValue => {
                 if (validationValue){
-                    location.replace("./printer.html");
+                    location.replace("./user.html");
                 }
                 else {
                     alertMessage("Conferma la mail prima di fare l'accesso");
