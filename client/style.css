@@ -153,6 +153,10 @@ a:hover {
     border-radius: 5px;
 }
 
+.btn-close:focus {
+    box-shadow: none;
+}
+
 .background {
     position: absolute;
     right: 0; left: 0; top: 0;
@@ -439,30 +443,27 @@ a:hover {
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
 }
 
-.chat-bot-command {
-    box-sizing: border-box;
-    display: flex;
-    width: 100%;
-    align-items: center;
-    vertical-align: bottom;
-    bottom: 0px;
-    position: absolute;
-    scroll-behavior: smooth;
+.mb-3 {
+    top: 87.2%;
 }
 
-.chat-txtfield {
-    width: 75%;
+.form-control {
+    border-top-left-radius: 0;
     border-bottom-left-radius: 10px;
-    border-width: 0.5px;
-    height: 35px;
 }
 
-.chat-btnenter {
-    width: 25%;
+.btn-outline-secondary {
+    border-top-right-radius: 0;
     border-bottom-right-radius: 10px;
-    border-width: 0.5px;
-    height: 35px;
     background-color: orange;
+}
+
+.btn-outline-secondary:hover {
+    background-color: orange;
+}
+
+.btn-outline-secondary:focus {
+    box-shadow: none;
 }
 
 .fa-heart {
@@ -935,6 +936,11 @@ a:hover {
     justify-content: space-around;
 }
 
+.content-elements-alt {
+    display: block;
+    justify-content: space-around;
+}
+
 .collapsible-menu:before {
     content: "\02795";
     font-size: 15px;
@@ -985,6 +991,25 @@ a:hover {
     line-height: 15px;
 }
 
+.payment-content {
+    border-style: none;
+    border-radius: 10px;
+    background-color: white;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.pay-row {
+    align-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-around;
+    
+}
 
 .blog {
     width: 80%; height: auto;

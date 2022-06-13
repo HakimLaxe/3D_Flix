@@ -116,7 +116,7 @@ function submitLogin(){
         (response) => { 
             isUserValidated(loginUsername).then( validationValue => {
                 if (validationValue){
-                    location.replace("./user.html");
+                    location.replace("./printer.html");
                 }
                 else {
                     alertMessage("Conferma la mail prima di fare l'accesso");
