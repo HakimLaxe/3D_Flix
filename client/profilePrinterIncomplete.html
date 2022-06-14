@@ -123,19 +123,26 @@
                             <div class="payment-content">
                                 <label style="font-size: 25px; font-weight: 500; margin-bottom: 0.5rem;">Dati Pagamento</label>
                                 <div class="payment-wrapper">
-                                    <label style="font-size: 20px; font-weight: 400">Bonifico Bancario</label><br>
+                                    <label style="font-size: 20px; font-weight: 400;">Bonifico Bancario</label><br>
                                     <div class="pay-row">
                                         <label style="font-size: 17px; font-weight: 400">Nome intestatario</label>
-                                        <input type="text">
+                                        <input type="text" class="info-complete-box" size="30">
                                     </div>
                                     <div class="pay-row">
                                         <label style="font-size: 17px; font-weight: 400">IBAN</label>
-                                        <input type="text">
+                                        <input type="text" class="info-complete-box" maxlength="27" size="30">
                                     </div>
                                     <label style="font-size: 20px; font-weight: 400; margin-top: 0.5rem;">PayPal</label><br>
                                     <div class="pay-row">
-                                        <label style="font-size: 17px; font-weight: 400">PayPal.Me</label>
-                                        <input type="text">
+                                        <div>
+                                            <label style="font-size: 17px; font-weight: 400">PayPal.Me</label><br>
+                                            <i class="fa fa-question-circle-o fa-lg" aria-hidden="true"></i>
+                                            <span class="tip-text-alt" style="align-items: flex-start;">Testo</span>    
+                                        </div>
+                                        <div class="input-group">
+                                            <div class="input-group-text">paypal.me/</div>
+                                            <input type="text" class="info-complete-box" size="16">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
