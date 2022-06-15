@@ -1025,7 +1025,7 @@ a:hover {
 }
 
 .chat-history {
-    width: 40%;
+    width: 35%;
     border-style: solid;
     border-width: 0px;
     border-radius: 10px;
@@ -1045,7 +1045,7 @@ a:hover {
 }
 
 .chat-display {
-    width: 60%;
+    width: 75%;
     border-style: solid;
     border-width: 0px;
     border-radius: 10px;
@@ -1054,10 +1054,24 @@ a:hover {
 }
 
 .chat-history-element {
-    height: 12%;
+    cursor: pointer;
+    padding: 0.5rem 0.5rem;
+    height: 15%;
     border-style: solid;
-    
+    display: flex;
+    justify-content: space-around;
 } 
+
+.chat-img-user {
+    border-style: solid;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+}
+
+.chat-actions-user {
+    display: block;
+}
 
 .payment-content {
     border-style: none;
