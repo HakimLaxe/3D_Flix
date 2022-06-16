@@ -1025,7 +1025,7 @@ a:hover {
 }
 
 .chat-history {
-    width: 35%;
+    width: 40%;
     border-style: solid;
     border-width: 0px;
     border-radius: 10px;
@@ -1054,12 +1054,16 @@ a:hover {
 }
 
 .chat-history-element {
-    cursor: pointer;
-    padding: 0.5rem 0.5rem;
+    width: 100%;
+    padding: 1rem;
+    flex-direction: row;
+    align-items: center;
     height: 15%;
     border-style: solid;
+    border-width: 1px;
+    border-top-width: 0px;
+    border-left-width: 0px;
     display: flex;
-    justify-content: space-around;
 } 
 
 .chat-img-user {
@@ -1067,10 +1071,45 @@ a:hover {
     border-radius: 50px;
     width: 50px;
     height: 50px;
+    margin: 0 1rem 0 0;
+    position: relative;
 }
 
-.chat-actions-user {
-    display: block;
+.chat-msg-user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    box-sizing: border-box;
+}
+
+.chat-actions {
+    flex: 1;
+    max-width: 8rem;
+    align-items: center;
+    line-height: 1;
+}
+
+.btn-msg {
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-align: left;
+}
+
+.badge-time {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.text-bg-warning {
+    background-color: orange;
+    pointer-events: none;
+    margin: 1rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .payment-content {
