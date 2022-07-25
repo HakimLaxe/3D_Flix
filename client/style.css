@@ -1016,7 +1016,7 @@ a:hover {
 }
 
 .chat-section {
-    margin: 2rem 10rem;
+    margin: 2rem 8rem;
     border-style: solid;
     border-width: 1px;
     border-radius: 10px;
@@ -1032,6 +1032,7 @@ a:hover {
     border-bottom-right-radius: 0px;
     border-top-right-radius: 0px;
     overflow-y: auto;
+    border-right: inherit;
     
 }
 
@@ -1051,6 +1052,8 @@ a:hover {
     border-radius: 10px;
     border-bottom-left-radius: 0px;
     border-top-left-radius: 0px;
+    flex-direction: column;
+    border-left: inherit;
 }
 
 .chat-history-element {
@@ -1064,6 +1067,7 @@ a:hover {
     border-top-width: 0px;
     border-left-width: 0px;
     display: flex;
+    border-right: none;
 } 
 
 .chat-img-user {
@@ -1085,7 +1089,7 @@ a:hover {
 
 .chat-actions {
     flex: 1;
-    max-width: 8rem;
+    max-width: 10.5rem;
     align-items: center;
 }
 
@@ -1105,6 +1109,91 @@ a:hover {
     align-items: center;
 }
 
+.top-chat {
+    height: 15%;
+    display: flex;
+    align-items: center;
+    padding: 0 15px 0 15px;
+    border-bottom: solid;
+    border-width: 1px;
+}
+
+.user-msg {
+    text-align: left;
+    line-height: normal;
+    font-size: large;
+    cursor: default;
+}
+
+.msg-chat {
+    height: 75%;
+    overflow-y: auto;
+}
+
+.msg-chat::-webkit-scrollbar {
+    width: 7px;
+}
+
+.msg-chat::-webkit-scrollbar-thumb {
+    background: orange;
+    border-radius: 10px;
+}
+
+.list-group {
+    list-style: none;
+}
+
+.list-group-item-sent {
+    max-width: calc(100% - 220px);
+    align-self: flex-end;
+    text-align: left;
+    font-size: 15px;
+    margin: 15px 15px 5px 15px;
+    border: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 7px 10px 7px 10px;
+    background-color: rgb(240, 178, 63);
+}
+
+.list-group-item-received {
+    max-width: calc(100% - 220px);
+    align-self: flex-start;
+    text-align: left;
+    font-size: 15px;
+    margin: 15px 15px 5px 15px;
+    border: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 7px 10px 7px 10px;
+    background-color: rgb(211, 211, 211);
+}
+
+.msg-write {
+    height: 10%;
+    border-top: solid;
+    border-width: 1px;
+    z-index: 10;
+    width: 100%;
+}
+
+.input-msg {
+    float: left;
+    height: 100%;
+    padding: 0 0 0 0;
+    width: 90%;
+    padding-left: 10px;
+}
+
+.msg-send {
+    margin: 7px 0 0 0;
+    border: none;
+}
+
+.fa-arrow-circle-right {
+    color: orange;
+    
+}
 
 .text-bg-warning {
     background-color: orange;
@@ -1112,7 +1201,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 0.2rem
+    margin-bottom: 0.3rem
 }
 
 .payment-content {
