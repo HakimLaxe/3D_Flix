@@ -1087,7 +1087,6 @@ a:hover {
     flex: 1;
     max-width: 8rem;
     align-items: center;
-    line-height: 1;
 }
 
 .btn-msg {
@@ -1095,21 +1094,25 @@ a:hover {
     white-space: nowrap; 
     overflow: hidden;
     text-align: left;
+    line-height: normal;
+    padding: 0 0 0 0;
 }
 
 .badge-time {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    align-items: center;
 }
+
 
 .text-bg-warning {
     background-color: orange;
     pointer-events: none;
-    margin: 1rem auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 0.2rem
 }
 
 .payment-content {
