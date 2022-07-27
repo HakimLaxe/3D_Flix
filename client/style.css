@@ -1070,6 +1070,10 @@ a:hover {
     border-right: none;
 } 
 
+.chat-history-element:hover {
+    background-color: rgb(240, 178, 63);
+}
+
 .chat-img-user {
     border-style: solid;
     border-radius: 50px;
@@ -1125,8 +1129,12 @@ a:hover {
     cursor: default;
 }
 
+.user-options {
+    border: none;
+}
+
 .msg-chat {
-    height: 75%;
+    height: 77%;
     overflow-y: auto;
 }
 
@@ -1146,14 +1154,38 @@ a:hover {
 .list-group-item-sent {
     max-width: calc(100% - 220px);
     align-self: flex-end;
-    text-align: left;
-    font-size: 15px;
     margin: 15px 15px 5px 15px;
     border: solid;
     border-width: 1px;
     border-radius: 10px;
     padding: 7px 10px 7px 10px;
     background-color: rgb(240, 178, 63);
+}
+
+.msg-divider {
+    align-self: center;
+    font-size: 12px;
+    color: white;
+    border: solid;
+    border-radius: 15px;
+    border-width: 1px;
+    margin: 0.2rem 0;
+    background-color: rgba(253, 181, 48, 0.747);
+    width: fit-content;
+    cursor: default;
+    padding: 2px 10px;
+    border-color: rgba(253, 181, 48, 0.747);
+}
+
+.msg-content {
+    text-align: left;
+    font-size: 15px;
+    margin-bottom: 0.5rem;
+}
+
+.msg-time {
+    font-size: 10px;
+    text-align: right;
 }
 
 .list-group-item-received {
@@ -1170,11 +1202,12 @@ a:hover {
 }
 
 .msg-write {
-    height: 10%;
+    height: 8%;
     border-top: solid;
     border-width: 1px;
     z-index: 10;
     width: 100%;
+    align-items: center;
 }
 
 .input-msg {
@@ -1183,16 +1216,17 @@ a:hover {
     padding: 0 0 0 0;
     width: 90%;
     padding-left: 10px;
+    align-items: center;
 }
 
 .msg-send {
-    margin: 7px 0 0 0;
+    margin: 3px 0 0 0;
     border: none;
+    align-content: center;
 }
 
 .fa-arrow-circle-right {
     color: orange;
-    
 }
 
 .text-bg-warning {
