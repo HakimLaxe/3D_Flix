@@ -8,7 +8,7 @@
         "DB_USER" : "root",
         "DB_PASSWORD" : "password",
         "DB_NAME": "3D-Flix"
-    },
+    }, 
     "Mail": {
         "MAIL_SERVICE" : "Gmail",
         "MAIL_HOST" : "smtp.aruba.it",
