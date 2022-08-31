@@ -429,7 +429,35 @@ a:hover {
     text-decoration: none;
 }
 
-.chat-style {
+.chat-style1 {
+    height: 300px;
+    width: 250px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 0.5px;
+    display: none;
+    position: absolute;
+    z-index: 200;
+    background-color: white;
+    margin-left: 2rem;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.chat-style2 {
+    height: 300px;
+    width: 250px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 0.5px;
+    display: none;
+    position: absolute;
+    z-index: 200;
+    background-color: white;
+    margin-left: 2rem;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.chat-style3 {
     height: 300px;
     width: 250px;
     border-radius: 10px;
@@ -444,12 +472,17 @@ a:hover {
 }
 
 .mb-3 {
-    top: 87.2%;
+    height: 12.8%;
 }
 
 .form-control {
     border-top-left-radius: 0;
     border-bottom-left-radius: 10px;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: inherit;
 }
 
 .btn-outline-secondary {
@@ -464,6 +497,7 @@ a:hover {
 
 .btn-outline-secondary:focus {
     box-shadow: none;
+    border-color: black;
 }
 
 .fa-heart {
@@ -932,8 +966,8 @@ a:hover {
 .info-row {
     display: flex;
     justify-content: space-around;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
     align-items: center;
 }
 
@@ -1162,11 +1196,25 @@ a:hover {
     overflow-y: auto;
 }
 
+.msg-chat-alt {
+    overflow-y: auto;
+    height: 87.2%;
+}
+
 .msg-chat::-webkit-scrollbar {
     width: 7px;
 }
 
 .msg-chat::-webkit-scrollbar-thumb {
+    background: orange;
+    border-radius: 10px;
+}
+
+.msg-chat-alt::-webkit-scrollbar {
+    width: 5px;
+}
+
+.msg-chat-alt::-webkit-scrollbar-thumb {
     background: orange;
     border-radius: 10px;
 }
@@ -1184,6 +1232,41 @@ a:hover {
     border-radius: 10px;
     padding: 7px 10px 7px 10px;
     background-color: rgb(240, 178, 63);
+}
+
+.list-group-item-sent-alt {
+    align-self: flex-end;
+    margin: 9px 9px 3px 9px;
+    border: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 7px 10px 7px 10px;
+    background-color: rgb(240, 178, 63);
+}
+
+.list-group-item-received {
+    max-width: calc(100% - 220px);
+    align-self: flex-start;
+    text-align: left;
+    font-size: 15px;
+    margin: 15px 15px 5px 15px;
+    border: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 7px 10px 7px 10px;
+    background-color: rgb(211, 211, 211);
+}
+
+.list-group-item-received-alt {
+    align-self: flex-start;
+    text-align: left;
+    font-size: 15px;
+    margin: 9px 9px 3px 9px;
+    border: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 7px 10px 7px 10px;
+    background-color: rgb(211, 211, 211);
 }
 
 .msg-divider {
@@ -1210,19 +1293,6 @@ a:hover {
 .msg-time {
     font-size: 10px;
     text-align: right;
-}
-
-.list-group-item-received {
-    max-width: calc(100% - 220px);
-    align-self: flex-start;
-    text-align: left;
-    font-size: 15px;
-    margin: 15px 15px 5px 15px;
-    border: solid;
-    border-width: 1px;
-    border-radius: 10px;
-    padding: 7px 10px 7px 10px;
-    background-color: rgb(211, 211, 211);
 }
 
 .msg-write {

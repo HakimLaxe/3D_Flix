@@ -26,9 +26,29 @@ function displayChats(username){
     })
 }
 
-function openChat(){
+function openChat1(){
     
-    var div = document.getElementById("chat");
+    var div = document.getElementById("chat1");
+    if (div.style.display !== "none") {
+        div.style.display = "none";
+    } else {
+        div.style.display = "block";
+    }
+}
+
+function openChat2(){
+    
+    var div = document.getElementById("chat2");
+    if (div.style.display !== "none") {
+        div.style.display = "none";
+    } else {
+        div.style.display = "block";
+    }
+}
+
+function openChat3(){
+    
+    var div = document.getElementById("chat3");
     if (div.style.display !== "none") {
         div.style.display = "none";
     } else {
@@ -116,7 +136,7 @@ function submitLogin(){
         (response) => { 
             isUserValidated(loginUsername).then( validationValue => {
                 if (validationValue){
-                    location.replace("./user.html");
+                    location.replace("./printer.html");
                 }
                 else {
                     alertMessage("Conferma la mail prima di fare l'accesso");
