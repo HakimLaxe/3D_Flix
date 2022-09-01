@@ -1334,6 +1334,10 @@ a:hover {
     margin-bottom: 0.3rem
 }
 
+.payment-wrapper {
+    margin: 0 2rem 0 2rem;
+}
+
 .payment-content {
     border-style: none;
     border-radius: 10px;
@@ -1348,9 +1352,16 @@ a:hover {
 .pay-row {
     align-content: center;
     align-items: center;
-    margin: 1rem 3.5rem;
+    margin-left: 5%;
+    margin-right: 5%;
     display: flex;
     justify-content: space-between;   
+}
+
+.pay-pal {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
 }
 
 .input-group {
