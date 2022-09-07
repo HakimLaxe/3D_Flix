@@ -516,6 +516,7 @@ a:hover {
 .footer-attributes {
     display: flex;
     justify-content:flex-start;
+    align-items: center;
 }
 
 .section-typestamp {
@@ -758,7 +759,8 @@ a:hover {
 
 .fa-question-circle-o {
     color: orange;
-    margin-left: -4rem;
+    position: relative;
+    margin-left: 1rem;
 }
 
 .tip-text {
@@ -803,8 +805,9 @@ a:hover {
 
 .fa-question-circle-o:hover + .tip-text-alt{
     visibility: visible;
+    position: absolute;
     opacity: 1;
-    margin-left: 1rem;
+    margin-top: 4rem;
 }
 
 .contact-content {
@@ -1009,7 +1012,6 @@ a:hover {
 .content-collapsible {
     padding: 2rem;
     display: none;
-    overflow: hidden;
     background-color: #f1f1f1;
 }
 
@@ -1356,6 +1358,13 @@ a:hover {
     margin-right: 5%;
     display: flex;
     justify-content: space-between;   
+}
+
+.pay-wrap-section {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 1rem;
+    margin-bottom: 0.7rem;
 }
 
 .pay-pal {

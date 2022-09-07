@@ -155,7 +155,7 @@
                             <form class="payment-content" id="pay-form">
                                 <label style="font-size: 25px; font-weight: 500;">Dati Pagamento</label>
                                 <div class="payment-wrapper">
-                                    <p style="font-size: 20px; font-weight: 500; text-align: left;">Bonifico Bancario</p><br>
+                                    <label class="pay-wrap-section">Bonifico Bancario</label>
                                     <div class="pay-row">
                                         <label style="font-size: 17px; font-weight: 400">Nome intestatario</label>
                                         <input type="text" class="info-complete-box" size="30">
@@ -164,13 +164,13 @@
                                         <label style="font-size: 17px; font-weight: 400;">IBAN</label>
                                         <input type="text" class="info-complete-box" maxlength="27" size="30">
                                     </div>
-                                    <p style="font-size: 20px; font-weight: 500; text-align: left;">PayPal</p><br>
+                                    <label class="pay-wrap-section">PayPal</label>
                                     <div class="pay-row">
                                         <div class="pay-pal">
-                                            <h1 style="font-size: 17px; font-weight: 400; align-items: center;">PayPal.Me</h1>
-                                            <i class="fa fa-question-circle-o fa-lg"></i>
+                                            <label style="font-size: 17px; font-weight: 400; align-items: center;">PayPal.Me</label>
+                                            <i class="fa fa-question-circle-o fa-lg" aria-hidden="true"></i>
+                                            <span class="tip-text-alt" style="align-items: flex-start;">Testo</span>
                                         </div>
-                                        <span class="tip-text-alt" style="align-items: flex-start;">Testo</span>
                                         <div class="input-group">
                                             <div class="input-group-text">paypal.me/</div>
                                             <input type="text" class="info-complete-box" size="16">
