@@ -687,6 +687,14 @@ a:hover {
     font-size: 16px;
 }
 
+.button-form-alternative-btn {
+    background-color: orange;
+    border-radius: 20px;
+    padding: 0.3rem 0.5rem;
+    width: auto;
+    border-style: groove;
+}
+
 .footer {
     flex-wrap: nowrap;
     padding: 1.5rem 0;
@@ -1399,14 +1407,7 @@ a:hover {
 
 .blog-col1 {
     width: 70%;
-    height: auto;
-    margin: 3rem;
-}
-
-.blog-col2 {
-    width: 30%;
-    height: 500px;
-    border: solid;
+    height: fit-content;
     margin: 3rem;
 }
 
@@ -1414,8 +1415,6 @@ a:hover {
     width: auto;
     height: 700px;
     border-radius: 10px;
-    border-style: solid;
-    border-width: 0.1px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     margin-bottom: 2rem;
 }
@@ -1423,8 +1422,6 @@ a:hover {
 .article-img {
     height: 58%;
     width: auto;
-    border-bottom: solid;
-    border-width: 1px;
     object-fit: contain;
     text-align: center;
 }
@@ -1466,8 +1463,6 @@ a:hover {
     display: flex;
     margin: 1rem;
     align-items: center;
-    border-top: solid;
-    border-width: 1px;
     justify-content: space-between;
 }
 
@@ -1479,4 +1474,42 @@ a:hover {
 .badge-second-sec {
     font-size: 15px;
     font-weight: 300;
+}
+
+.blog-col2 {
+    width: 30%;
+    height:fit-content;
+    margin: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.blog-categories {
+    margin: 1.5rem 2rem;
+    font-size: 23px;
+}
+
+.blog-categories-elem {
+    font-size: 17px;
+    cursor: pointer;
+    color: rgb(111, 107, 107);
+}
+
+.blog-categories-elem:hover {
+    color: orange;
+}
+
+.blog-archives {
+    margin: 1.5rem 2rem;
+    font-size: 23px;
+}
+
+.blog-archives-elem {
+    font-size: 17px;
+    cursor: pointer;
+    color: rgb(111, 107, 107);
+}
+
+.blog-archives-elem:hover {
+    color: orange;
 }
