@@ -1513,3 +1513,34 @@ a:hover {
 .blog-archives-elem:hover {
     color: orange;
 }
+
+.makers {
+    width: 80%; height: auto;
+    position: relative;
+    background-color: white;
+    margin: auto;
+}
+
+.d-flex {
+    padding: 2rem;
+}
+
+.me-2 {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.btn-outline-success {
+    background-color: orange;
+    border-color: orange;
+    color: white;
+}
+
+.btn-outline-success:hover {
+    background-color: rgba(255, 166, 0, 0.859);
+    border-color: rgba(255, 166, 0, 0.859);
+}
+
+.btn-outline-success:focus {
+    
+}
