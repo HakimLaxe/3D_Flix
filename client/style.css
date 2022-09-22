@@ -1522,33 +1522,24 @@ a:hover {
 }
 
 .search-section {
-    padding: 1.5rem;
+    padding: 1.5rem 12rem 0.5rem 12rem;
 }
 
-.search {
-    text-align: center;
-    align-items: center;
-}
-
-.search-bar {
-    width: 40rem;
-    border: solid;
-    border-width: 1px;
-    font-size: 17px;
-    padding: 5px 10px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    vertical-align: middle;
-}
-
-.search-section .search button {
+.input-group-text-alt {
+    width: 7%;
     background-color: orange;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
     border: solid;
     border-width: 1px;
+    border-color: #ced4da;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.fa-search {
     color: white;
-    padding: 7px 20px;
-    vertical-align: middle;
-    margin-left: -5px;
+}
+
+.search input {
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
 }
