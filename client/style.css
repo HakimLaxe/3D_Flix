@@ -1543,3 +1543,37 @@ a:hover {
     border-top-left-radius: 7px;
     border-bottom-left-radius: 7px;
 }
+
+.makers-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.makers-filter {
+    padding: 1rem;
+    width: 25%;
+    height: fit-content;
+    margin: 3rem;
+    border: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-color: #ced4da;
+}
+
+.makers-profiles {
+    padding: 1rem;
+    border: solid;
+    width: 75%;
+    height: fit-content;
+    margin: 3rem;
+    border-radius: 10px;
+}
+
+.form-check-label {
+    cursor: pointer;
+}
+
+.form-check-input:focus {
+    box-shadow: none;
+}
