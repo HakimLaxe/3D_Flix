@@ -1551,7 +1551,7 @@ a:hover {
 
 .makers-filter {
     padding: 1rem;
-    width: 25%;
+    width: 30%;
     height: fit-content;
     margin: 3rem;
     border: solid;
@@ -1562,12 +1562,9 @@ a:hover {
 }
 
 .makers-profiles {
-    padding: 1rem;
-    border: solid;
-    width: 75%;
     height: fit-content;
+    width: 70%;
     margin: 3rem;
-    border-radius: 10px;
 }
 
 .form-check-label {
@@ -1576,4 +1573,33 @@ a:hover {
 
 .form-check-input:focus {
     box-shadow: none;
+}
+
+.makers-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 2rem 0;
+}
+
+.makers-card {
+    width: 45%;
+    height: 250px;
+    border: solid;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-color: #ced4da;
+    border-width: 1px;
+}
+
+.makers-propic {
+    width: 120px;
+    height: 120px;
+    border: solid;
+    border-width: 1px;
+    cursor: pointer;
+    margin: 8% 30% 2% 30%;
+}
+
+.makers-info {
+    text-align: center;
 }
