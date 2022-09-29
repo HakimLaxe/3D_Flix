@@ -1564,7 +1564,7 @@ a:hover {
 .makers-profiles {
     height: fit-content;
     width: 70%;
-    margin: 3rem;
+    margin: 3rem 3rem 1rem 3rem;
 }
 
 .form-check-label {
@@ -1621,5 +1621,22 @@ a:hover {
 }
 
 .makers-nav-arrows {
-    background-color: white;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.btn-primary {
+    background-color: orange;
+    border-color: orange;
+}
+
+.btn-primary:hover {
+    background-color: rgba(255, 166, 0, 0.663);
+    border-color: rgba(255, 166, 0, 0.663);
+}
+
+.btn-primary:focus {
+    background-color: orange;
+    border-color: orange;
+    box-shadow: none;
 }
