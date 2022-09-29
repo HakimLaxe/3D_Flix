@@ -1550,7 +1550,7 @@ a:hover {
 }
 
 .makers-filter {
-    padding: 1rem;
+    padding: 2rem;
     width: 30%;
     height: fit-content;
     margin: 3rem;
@@ -1602,4 +1602,20 @@ a:hover {
 
 .makers-info {
     text-align: center;
+    padding: 0.5rem 6rem 0;
+}
+
+.makers-info-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: -5px 1rem;
+}
+
+.star-rating {
+    cursor: default;
+}
+
+.fa-star {
+    color: gold;
 }
