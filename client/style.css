@@ -1623,20 +1623,23 @@ a:hover {
 .makers-nav-arrows {
     text-align: center;
     padding-bottom: 1rem;
+    align-items: center;
 }
 
-.btn-primary {
+.btn-nav {
     background-color: orange;
     border-color: orange;
+    color: white
 }
 
-.btn-primary:hover {
+.btn-nav:hover {
     background-color: rgba(255, 166, 0, 0.663);
     border-color: rgba(255, 166, 0, 0.663);
+    color: white;
 }
 
-.btn-primary:focus {
-    background-color: orange;
+.btn-nav:focus {
+    background-color: rgb(255, 189, 68);
     border-color: orange;
     box-shadow: none;
 }
