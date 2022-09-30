@@ -1553,7 +1553,7 @@ a:hover {
     padding: 2rem;
     width: 30%;
     height: fit-content;
-    margin: 3rem;
+    margin: 2rem;
     border: solid;
     border-width: 1px;
     border-radius: 10px;
@@ -1564,7 +1564,7 @@ a:hover {
 .makers-profiles {
     height: fit-content;
     width: 70%;
-    margin: 3rem 3rem 1rem 3rem;
+    margin: 2rem 2rem 1rem 1rem;
 }
 
 .form-check-label {
@@ -1577,7 +1577,7 @@ a:hover {
 
 .makers-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 0 0 2rem 0;
 }
 
@@ -1629,7 +1629,8 @@ a:hover {
 .btn-nav {
     background-color: orange;
     border-color: orange;
-    color: white
+    color: white;
+    border-radius: 50%;
 }
 
 .btn-nav:hover {
