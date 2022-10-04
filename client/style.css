@@ -1197,6 +1197,12 @@ a:hover {
     cursor: default;
 }
 
+#user-options-btn {
+    cursor: pointer;
+}
+
+
+
 .msg-chat {
     height: 77%;
     overflow-y: auto;
