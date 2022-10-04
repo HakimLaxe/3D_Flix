@@ -311,3 +311,24 @@ function collapsibleMenu() {
         });
     }
 }
+
+
+//Fare script per il menu a tendina nella chat 
+
+/*function openOptions() {
+    var options = document.getElementsByClassName("user-options-btn");
+    var menu = document.getElementsByClassName("user-options");
+    var i;
+    
+    for (i = 0; i < options.length; i++) {
+        options[i].addEventListener("click", function() {
+            menu.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+}*/

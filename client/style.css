@@ -1197,11 +1197,38 @@ a:hover {
     cursor: default;
 }
 
-#user-options-btn {
-    cursor: pointer;
+.user-options-btn {
+    border: none;
 }
 
+.user-options {
+    position: absolute;
+    display: flex;
+    overflow: hidden;
+    background: rgb(194, 194, 194);
+    border-radius: 10px;
+    transition: all .3s ease;
+    padding: 0.5rem;
+    text-align: left;
+    margin-top: 1rem;
+    display: none;
+}
 
+.user-options ul {
+    list-style: none;
+    transition: all .3s ease;
+    margin: -2px;
+}
+
+.user-options li {
+    line-height: 40px;
+}
+
+.user-options a {
+    position: relative;
+    margin-left: -20px;
+    margin-right: 10px;
+}
 
 .msg-chat {
     height: 77%;
