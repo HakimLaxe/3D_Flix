@@ -158,34 +158,41 @@
                     <button type="button" class="collapsible-menu" onclick="collapsibleMenu()">Impostazioni</button>
                     <div class="content-collapsible">
                         <div class="content-elements-alt">
-                            <form class="payment-content" id="pay-form">
-                                <label style="font-size: 25px; font-weight: 500;">Dati Pagamento</label>
+                            <div class="payment-content">
+                            <label style="font-size: 25px; font-weight: 500;">Dati Pagamento</label>
+                            <div id="pay-form-iban">
                                 <div class="payment-wrapper">
-                                    <label class="pay-wrap-section">Bonifico Bancario</label>
+                                    <h2 class="pay-wrap-section">Bonifico Bancario</h2>
                                     <div class="pay-row">
-                                        <label style="font-size: 17px; font-weight: 400">Nome intestatario</label>
-                                        <input type="text" class="info-complete-box" size="30">
+                                        <label for="namePay" style="font-size: 17px; font-weight: 400">Nome Intestatario</label>
+                                        <input id="namePay" type="text" class="info-complete-box" size="30">
                                     </div>
                                     <div class="pay-row" style="margin-top: 10px;">
-                                        <label style="font-size: 17px; font-weight: 400;">IBAN</label>
-                                        <input type="text" class="info-complete-box" maxlength="27" size="30">
+                                        <label for="ibanPay" style="font-size: 17px; font-weight: 400;">IBAN</label>
+                                        <input id="ibanPay" type="text" class="info-complete-box" maxlength="27" size="30">
                                     </div>
-                                    <label class="pay-wrap-section">PayPal</label>
+                                    <br>
+                                    <button class="button-form" type="submit" id="submitInfo" onclick="submitIbanInfo()">Conferma</button>
+                                </div>
+                            </div>
+                            <div id="pay-form-pp">
+                                <div class="payment-wrapper">
+                                    <h2 class="pay-wrap-section">PayPal</h2>
                                     <div class="pay-row">
                                         <div class="pay-pal">
-                                            <label style="font-size: 17px; font-weight: 400; align-items: center;">PayPal.Me</label>
+                                            <label for="ppPay" style="font-size: 17px; font-weight: 400; align-items: center;">PayPal.Me</label>
                                             <i class="fa fa-question-circle-o fa-lg" aria-hidden="true"></i>
                                             <span class="tip-text-alt" style="align-items: flex-start;">Testo</span>
                                         </div>
                                         <div class="input-group">
                                             <div class="input-group-text">paypal.me/</div>
-                                            <input type="text" class="info-complete-box" size="16">
+                                            <input id="ppPay" type="text" class="info-complete-box" size="16">
                                         </div>  
                                     </div>
                                     <br>
-                                    <button class="button-form" type="submit">Conferma</button>
+                                    <button class="button-form" type="submit" id="submitInfo" onclick="submitPPInfo()">Conferma</button>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>

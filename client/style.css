@@ -1393,6 +1393,10 @@ a:hover {
     margin: 0 2rem 0 2rem;
 }
 
+.payment-wrapper-alt {
+    margin: 0 3rem 0 3rem;
+}
+
 .payment-content {
     border-style: none;
     border-radius: 10px;
@@ -1410,14 +1414,33 @@ a:hover {
     margin-left: 5%;
     margin-right: 5%;
     display: flex;
-    justify-content: space-between;   
+    justify-content: space-between;
+}
+
+.pay-row-alt {
+    align-content: center;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
 }
 
 .pay-wrap-section {
     font-size: 20px;
-    font-weight: 500;
     margin-top: 1rem;
-    margin-bottom: 0.7rem;
+    margin-bottom: 1rem;
+    margin-left: 1.5rem;
+    text-align: left;
+}
+
+.pay-wrap-section-alt {
+    font-size: 20px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    text-align: left;
 }
 
 .pay-pal {
@@ -1688,4 +1711,8 @@ a:hover {
     background-color: rgb(255, 189, 68);
     border-color: orange;
     box-shadow: none;
+}
+
+.modify-content {
+    padding: 4rem;
 }

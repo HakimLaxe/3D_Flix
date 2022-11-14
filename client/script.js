@@ -88,9 +88,9 @@ function checkPassword(password) {
     let decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
     if(password.match(decimal)) 
         return true;
-    
-    alertMessage("La password non rispetta il formato prestabilito")
-    return false;    
+
+    alertMessage("La password non rispetta il formato prestabilito");
+    return false;
 } 
 
 function checkUsername(username){
@@ -137,7 +137,7 @@ function submitLogin(){
         (response) => { 
             isUserValidated(loginUsername).then( validationValue => {
                 if (validationValue){
-                    location.replace("./user.html");
+                    location.replace("./printer.html");
                 }
                 else {
                     alertMessage("Conferma la mail prima di fare l'accesso");
@@ -328,4 +328,68 @@ function openOptions() {
             }
         });
     }
+}
+
+
+function checkNamePay(checkNamePay) {
+    if (checkNamePay.length < 5) {
+        alertMessage("L'intestatario inserito non rispetta il fomato prestabilito")
+        return false;
+    }
+    return true;
+}
+
+function checkIbanPay(checkIbanPay) {
+    if (checkIbanPay.length < 27) {
+        alertMessage("L'IBAN inserito non ha il numero di cifre giusto");
+        return false;
+    } 
+    return true;
+} 
+
+function checkIbanSubmit(namePay, ibanPay){
+    if ( namePay.length == 0 || ibanPay.length == 0 ){
+        alertMessage("Riempi entrambi i campi");
+        return false;
+    }
+    return true;
+}
+
+function clearIbanInfoFields(){
+    document.getElementById("namePay").value = ''
+    document.getElementById("ibanPay").value = ''
+}
+
+
+//submitInfo() per le informazioni di pagamento del printer
+function submitIbanInfo() {
+    let namePay = document.getElementById("namePay").value;
+    let ibanPay = document.getElementById("ibanPay").value;
+
+}
+
+function checkPPPay(checkPPPay) {
+    if (checkPPPay.length < 5) {
+        alertMessage("Il nome PayPal non rispetta il formato prestabilito");
+        return false;
+    }
+    return true;
+}
+
+function clearPPInfoFields() {
+    document.getElementById("ppPay").value = ''
+}
+
+function checkPPPay(ppPay){
+    if ( ppPay.length == 0){
+        alertMessage("Riempi il campo");
+        return false;
+    }
+    return true;
+}
+
+function submitPPInfo() {
+    let ppPay = document.getElementById("ppPay").value;
+
+
 }
