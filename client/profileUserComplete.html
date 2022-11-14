@@ -108,27 +108,65 @@
                     </div>
                     <button type="button" class="collapsible-menu" onclick="collapsibleMenu()">Le mie Chat</button>
                     <div class="content-collapsible">
-                        <div class="content-elements">
-                            <div class="element-block-alt">
-                                <div class="vendor-info-alt">
-                                    <h6 class="vendor-name-alt">
-                                        <a href="" style="font-size: 18px; font-weight: 400; text-decoration: none; color: black;"> <!--Link venditore-->
-                                            Ginopippo
-                                        </a>
-                                        <h6 style="font-size: 17px; font-weight: 300;">Visiona la Chat con questo Printer</h6>
-                                    </h6>
-                                    <button class="button-form" style="margin-top: 1rem;">Chat</button>
-                                </div>
+                        <div class="chat-section">
+                            <div class="chat-history">
+                                <a href="" class="chat-history-element"> 
+                                    <div class="chat-img-user">
+                                        <img src="">
+                                    </div>
+                                    <div class="chat-msg-user">
+                                        <div class="chat-actions">
+                                            <h6 class="btn-msg">Ginopippo:</h6>
+                                            <h6 class="btn-msg" style="font-weight: 400;">Ciao sono Ginopippo</h6>
+                                        </div>
+                                        <div class="badge-time">
+                                            <span class="badge rounded-pill text-bg-warning">1</span>
+                                            <span style="font-size: small;">5 Min</span>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                            <div class="element-block-alt">
-                                <div class="vendor-info-alt">
-                                    <h6 class="vendor-name-alt">
-                                        <a href="" style="font-size: 18px; font-weight: 400; text-decoration: none; color: black;"> <!--Link venditore-->
-                                            Ginopippo
-                                        </a>
-                                        <h6 style="font-size: 17px; font-weight: 300;">Visiona la Chat con questo Printer</h6>
-                                    </h6>
-                                    <button class="button-form" style="margin-top: 1rem;">Chat</button>
+                            <div class="chat-display">
+                                <div class="top-chat">
+                                    <div class="chat-img-user">
+                                        <img src="">
+                                    </div>
+                                    <h6 class="user-msg">Ginopippo</h6>
+                                    <span style="width: 25rem;"></span>
+                                    <button class="user-options-btn" id="options-btn" onclick="openOptions()"><i class="fa fa-ellipsis-v fa-lg"></i></button>
+                                    <div class="user-options">
+                                        <ul>
+                                            <li><a href="#">Cerca</a></li>
+                                            <li><a href="#">Segnala</a></li>
+                                            <li><a href="#">Blocca</a></li>
+                                            <li><a href="#">Elimina chat</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="msg-chat">
+                                    <ul class="list-group">
+                                        <li class="msg-divider">27 luglio 2022</li>
+                                        <li class="list-group-item-sent">
+                                            <p class="msg-content">Ciao sono Ginopippo</p>
+                                            <div class="msg-time">11:45</div>
+                                        </li>
+                                        <li class="list-group-item-received">
+                                            <p class="msg-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In placerat non enim vitae tempor. 
+                                                Vestibulum et feugiat risus, eu ultricies est. Aenean justo lacus, finibus vel finibus quis, 
+                                                tempor quis massa. Donec sagittis consectetur velit in fringilla. 
+                                                Vestibulum elementum quam ut orci dignissim, non viverra leo sagittis. 
+                                                Nunc vitae sodales arcu, vitae aliquam nulla. Suspendisse vitae ante a massa tincidunt 
+                                                feugiat a non odio.
+                                            </p>
+                                            <div class="msg-time">11:50</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="msg-write">
+                                    <input type="text" placeholder="Messaggio" class="input-msg">
+                                    <button type="submit" class="msg-send" onclick="">
+                                        <i class="fa fa-arrow-circle-right fa-2x"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>

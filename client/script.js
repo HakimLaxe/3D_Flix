@@ -1,6 +1,7 @@
 const { count } = require("console");
 const { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } = require("constants");
 const { get } = require("http");
+const { format } = require("path");
 
 var singInState = 0;
 
@@ -312,17 +313,13 @@ function collapsibleMenu() {
     }
 }
 
-
-//Fare script per il menu a tendina nella chat 
-
-/*function openOptions() {
-    var options = document.getElementsByClassName("user-options-btn");
-    var menu = document.getElementsByClassName("user-options");
+function openOptions() {
+    var op = document.getElementsByClassName("user-options-btn");
     var i;
-    
-    for (i = 0; i < options.length; i++) {
-        options[i].addEventListener("click", function() {
-            menu.classList.toggle("active");
+
+    for(i = 0; i < op.length; i++) {
+        op[i].addEventListener("click", function() {
+            this.classList.toggle("active");
             var content = this.nextElementSibling;
             if (content.style.display === "block") {
                 content.style.display = "none";
@@ -331,4 +328,4 @@ function collapsibleMenu() {
             }
         });
     }
-}*/
+}

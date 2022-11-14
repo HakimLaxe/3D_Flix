@@ -1199,19 +1199,35 @@ a:hover {
 
 .user-options-btn {
     border: none;
+    display: block;
+}
+
+.user-options-btn:focus {
+    background-color: transparent;
+}
+
+.user-options-btn.active {
+    background-color: #f1f1f1;
+}
+
+.user-options-btn::after {
+    background-color: transparent;
 }
 
 .user-options {
     position: absolute;
-    display: flex;
-    overflow: hidden;
+    display: none;
     background: rgb(194, 194, 194);
     border-radius: 10px;
     transition: all .3s ease;
     padding: 0.5rem;
     text-align: left;
-    margin-top: 1rem;
-    display: none;
+    margin-top: 12.5rem;
+    margin-left: 29rem;
+}
+
+.user-options.active:focus {
+    background-color: transparent;
 }
 
 .user-options ul {
