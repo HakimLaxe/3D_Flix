@@ -109,3 +109,52 @@ async function insertChat(srcUser, destUser, message){
         });
     });    
 }
+
+//NON SI SA SE SO GIUSTE, INFATTI NON FUNZIONANO
+/*
+async function ibanInfo(namePay, ibanPay) {
+    return new Promise((resolve, reject) => {
+        fetch(url + '/api/printer/ibanInfo', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({namePay: namePay, ibanPay: ibanPay}),
+        }).then((response) => {
+            if (response.ok) {
+                response.json().then((printer) => {
+                    resolve(printer);
+                });
+            } else {
+                // analyze the cause of error
+                response.json()
+                    .then((obj) => { reject(obj); }) // error msg in the response body
+                    .catch((err) => { reject({ errors: [{ param: "Application", msg: "Cannot parse server response" }] }) }); // something else
+            }
+        }).catch((err) => { reject({ errors: [{ param: "Server", msg: "Cannot communicate" }] }) }); // connection errors
+    });
+}
+
+async function ppInfo(ppPay) {
+    return new Promise((resolve, reject) => {
+        fetch(url + '/api/printer/ppInfo', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ppPay: ppPay}),
+        }).then((response) => {
+            if (response.ok) {
+                response.json().then((printer) => {
+                    resolve(printer);
+                });
+            } else {
+                // analyze the cause of error
+                response.json()
+                    .then((obj) => { reject(obj); }) // error msg in the response body
+                    .catch((err) => { reject({ errors: [{ param: "Application", msg: "Cannot parse server response" }] }) }); // something else
+            }
+        }).catch((err) => { reject({ errors: [{ param: "Server", msg: "Cannot communicate" }] }) }); // connection errors
+    });
+}
+*/

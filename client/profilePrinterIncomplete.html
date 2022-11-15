@@ -172,7 +172,7 @@
                                         <input id="ibanPay" type="text" class="info-complete-box" maxlength="27" size="30">
                                     </div>
                                     <br>
-                                    <button class="button-form" type="submit" id="submitInfo" onclick="submitIbanInfo()">Conferma</button>
+                                    <button class="button-form" type="submit" id="submitIban" onclick="submitIbanInfo()">Conferma</button>
                                 </div>
                             </div>
                             <div id="pay-form-pp">
@@ -190,9 +190,21 @@
                                         </div>  
                                     </div>
                                     <br>
-                                    <button class="button-form" type="submit" id="submitInfo" onclick="submitPPInfo()">Conferma</button>
+                                    <button class="button-form" type="submit" id="submitPP" onclick="submitPPInfo()">Conferma</button>
                                 </div>
                             </div>
+
+                            <dialog id="errorModal" class="error-modal">
+                                <h3 style="font-weight: 400;" id="modalTitle"> Errore! </h3> 
+                                                      
+                                <div>
+                                    <p id="errorMessage">Message</p>
+                                </div>
+                                <div class="actions">
+                                  <button id="small close-modal-btn" class="button-form" onclick="onCloseModal()"> Chiudi </button>
+                                </div>
+                            </dialog>
+
                         </div>
                     </div>
                 </div>
