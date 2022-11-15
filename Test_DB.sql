@@ -27,6 +27,18 @@ CREATE TABLE Message (
   PRIMARY KEY(messageID, srcNickname, destNickname)
 );
 
+--NON SI SA SE SO GIUSTE, IMPLEMENTARE LA DIFFERENZA USER/PRINTER
+/*CREATE TABLE IF NOT EXISTS PrinterIbanInfo(
+  namePay VARCHAR(255) NOT NULL,
+  ibanPay CHAR(27) NOT NULL,
+  PRIMARY KEY('ibanPay'),
+);
+
+CREATE TABLE IF NOT EXISTS PrinterPPInfo(
+  ppPay VARCHAR(255) NOT NULL,
+)
+*/
+
 INSERT INTO User(Name,Surname, NickName, PasswordHash, Mail, City, Prov)
 VALUES("Mario","Rossi","RossiM01","$2b$10$bog3ld9RVyCHqXt6iHhHRu7Fay14bwca6t.ApBS.6KR30m3VnXa1i","MarioRossi@mail.com","Roma","RO");
 

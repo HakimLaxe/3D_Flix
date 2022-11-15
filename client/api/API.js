@@ -110,11 +110,11 @@ async function insertChat(srcUser, destUser, message){
     });    
 }
 
-//NON SI SA SE SO GIUSTE, INFATTI NON FUNZIONANO
-/*
+//NON SI SA SE SO GIUSTE
+
 async function ibanInfo(namePay, ibanPay) {
     return new Promise((resolve, reject) => {
-        fetch(url + '/api/printer/ibanInfo', {
+        fetch(url + '/api/printer/insertIbanInfo', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -137,7 +137,7 @@ async function ibanInfo(namePay, ibanPay) {
 
 async function ppInfo(ppPay) {
     return new Promise((resolve, reject) => {
-        fetch(url + '/api/printer/ppInfo', {
+        fetch(url + '/api/printer/insertPPInfo', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -157,4 +157,3 @@ async function ppInfo(ppPay) {
         }).catch((err) => { reject({ errors: [{ param: "Server", msg: "Cannot communicate" }] }) }); // connection errors
     });
 }
-*/
