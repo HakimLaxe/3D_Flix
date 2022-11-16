@@ -103,59 +103,6 @@ function insertValidateUser (username, activationCode){
     });
 };
 
-//NON SI SA SE SO GIUSTE
-/*
-function insertIbanInfo (namePay, ibanPay) {
-    return new Promise((resolve, reject) => {
-        let sql = 'INSERT INTO PrinterIbanInfo(namePay, ibanPay) VALUES(?,?)';
-
-        connection.query(sql, [namePay, ibanPay], function (err, result) {
-            if (err) {
-                console.log(err);
-                reject(err);
-            }
-            else {
-                resolve(true);
-            }
-        });
-    });
-};
-
-function insertPPInfo (ppPay) {
-    return new Promise((resolve, reject) => {
-        let sql = 'INSERT INTO PrinterPPInfo(ppPay) VALUES(?)';
-
-        connection.query(sql, [ppPay], function (err, result) {
-            if (err) {
-                console.log(err);
-                reject(err);
-            }
-            else {
-                resolve(true);
-            }
-        });
-    });
-};
-
-function getIbanInfo(ibanPay) {
-    return new Promise((resolve, reject) => {
-        let sql = 'SELECT * FROM PrinterIbanInfo WHERE ibanPay = ?';
-
-        connection.query(sql, [ibanPay], function (err, result) {
-            if (err) {
-                console.log(err);
-                reject(err);
-            }
-            if (result.length === 0) {
-                resolve(false);
-            } else {
-                resolve(result[0].ActivationCode);
-            }
-        });
-    });
-};
-*/
-
 function getValidationCode (username){
     return new Promise((resolve, reject) => {
         let sql = 'SELECT * FROM ValidateUser WHERE Nickname = ?';
@@ -250,6 +197,59 @@ function checkPassword(user, password){
     return bcrypt.compare(password, user.password);
 }
 
+//NON SI SA SE SO GIUSTE
+
+function insertIbanInfo (namePay, ibanPay) {
+    return new Promise((resolve, reject) => {
+        let sql = 'INSERT INTO PrinterIbanInfo(namePay, ibanPay) VALUES(?,?)';
+
+        connection.query(sql, [namePay, ibanPay], function (err, result) {
+            if (err) {
+                console.log(err);
+                reject(err);
+            }
+            else {
+                resolve(true);
+            }
+        });
+    });
+};
+
+function insertPPInfo (ppPay) {
+    return new Promise((resolve, reject) => {
+        let sql = 'INSERT INTO PrinterPPInfo(ppPay) VALUES(?)';
+
+        connection.query(sql, [ppPay], function (err, result) {
+            if (err) {
+                console.log(err);
+                reject(err);
+            }
+            else {
+                resolve(true);
+            }
+        });
+    });
+};
+
+function getIbanInfo(ibanPay) {
+    return new Promise((resolve, reject) => {
+        let sql = 'SELECT * FROM PrinterIbanInfo WHERE ibanPay = ?';
+
+        connection.query(sql, [ibanPay], function (err, result) {
+            if (err) {
+                console.log(err);
+                reject(err);
+            }
+            if (result.length === 0) {
+                resolve(false);
+            } else {
+                resolve(result[0].ActivationCode);
+            }
+        });
+    });
+};
+
+
 exports.getUser = getUser;
 exports.verifySiginCredential = verifySiginCredential;
 exports.checkPassword = checkPassword;
@@ -261,3 +261,8 @@ exports.deleteValidatedUser = deleteValidatedUser;
 exports.updateMail = updateMail;
 exports.getUserMessages = getUserMessages;
 exports.insertMessage = insertMessage;
+
+//NON SI SA SE SO GIUSTE
+exports.insertIbanInfo = insertIbanInfo;
+exports.getIbanInfo = getIbanInfo;
+exports.insertPPInfo = insertPPInfo;

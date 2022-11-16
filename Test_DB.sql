@@ -32,10 +32,15 @@ CREATE TABLE Message (
   namePay VARCHAR(255) NOT NULL,
   ibanPay CHAR(27) NOT NULL,
   PRIMARY KEY('ibanPay'),
+  printerID int,
+  FOREIGN KEY(printerID) REFERENCES Printers(printerID) 
 );
 
 CREATE TABLE IF NOT EXISTS PrinterPPInfo(
   ppPay VARCHAR(255) NOT NULL,
+  PRIMARY KEY('ppPay'),
+  printerID int,
+  FOREIGN KEY(printerID) REFERENCES Printers(printerID) 
 )
 */
 
