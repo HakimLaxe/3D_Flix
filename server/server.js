@@ -182,6 +182,40 @@ app.post('/api/user/insertMessage', (req, res) => {
   );
 });
 
+//NON SI SA SE SO GIUSTE
+/*
+app.post('/api/printer/ibanInfo', (req, res) => {
+
+  const namePay = req.body.namePay;
+  const ibanPay = req.body.ibanPay;
+
+  db.insertIbanInfo(namePay, ibanPay).then((result) => {
+    res.json({"insertIbanInfo": true});
+  })
+  .catch(
+    (err) => {
+      console.log("Error Catched in /api/printer/insertIbanInfo")
+      new Promise((resolve) => {setTimeout(resolve, 1000)}).then(() => res.status(401).json(authErrorObj))
+    }
+  );
+});
+
+app.post('/api/printer/ppInfo', (req, res) => {
+
+  const ppPay = req.body.ppPay;
+
+  db.insertPPInfo(ppPay).then((result) => {
+    res.json({"insertPPInfo": true});
+  })
+  .catch(
+    (err) => {
+      console.log("Error Catched in /api/printer/insertPPInfo")
+      new Promise((resolve) => {setTimeout(resolve, 1000)}).then(() => res.status(401).json(authErrorObj))
+    }
+  );
+});
+*/
+
 // For the rest of the code, all APIs require authentication
 app.use(
     jwt({
