@@ -449,3 +449,22 @@ function submitPPInfo() {
         );   
 
 }
+
+//Possibile controllo per la differenza USER/PRINTER
+function checkUserPrinter() {
+
+    let user = document.getElementById("rdbtnUser");
+    let printer = document.getElementById("rdbtnPrinter");
+    const isUser = false;
+    const isPrinter = false;
+
+    if(user.checked == true) {
+        isUser = true;
+    } else if(printer.checked == true) {
+        isPrinter = true;
+    } else {
+        alertMessage("Per completare l'iscrizione seleziona una tipologia di utente");
+        return false;
+    }
+    return true;
+}
