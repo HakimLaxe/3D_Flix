@@ -3,20 +3,40 @@ CREATE DATABASE IF NOT EXISTS `3D-Flix`;
 USE `3D-Flix`;
 
 CREATE TABLE IF NOT EXISTS User(
-Name VARCHAR(255) NOT NULL,
-Surname VARCHAR(255) NOT NULL,
-Nickname VARCHAR(255) NOT NULL,
-PasswordHash VARCHAR(255) NOT NULL,
-Mail VARCHAR(255) NOT NULL,
-City VARCHAR(255) NOT NULL,
-Prov VARCHAR(255) NOT NULL,
-PRIMARY KEY(`Nickname`)
+  --userID INTEGER AUTO_INCREMENT,
+  Name VARCHAR(255) NOT NULL,
+  Surname VARCHAR(255) NOT NULL,
+  Nickname VARCHAR(255) NOT NULL,
+  PasswordHash VARCHAR(255) NOT NULL,
+  Mail VARCHAR(255) NOT NULL,
+  City VARCHAR(255) NOT NULL,
+  Prov VARCHAR(255) NOT NULL,
+  --isUser BOOLEAN,
+  --userType ENUM('Studente', 'Azienda', 'Hobbista') NOT NULL,
+  --PRIMARY KEY('userID')
+  PRIMARY KEY('Nickname')
 );
 
+/*
+CREATE TABLE IF NOT EXISTS Printer(
+  printerID INTEGER AUTO_INCREMENT,
+  Name VARCHAR(255) NOT NULL,
+  Surname VARCHAR(255) NOT NULL,
+  NickName VARCHAR(255) NOT NULL,
+  PasswordHash VARCHAR(255) NOT NULL,
+  Mail VARCHAR(255) NOT NULL,
+  City VARCHAR(255) NOT NULL,
+  Prov VARCHAR(255) NOT NULL,
+  isPrinter BOOLEAN,
+  printerType ENUM('Privato', 'Azienda', 'Laboratorio') NOT NULL,
+  PRIMARY KEY('printerID')
+);
+*/
+
 CREATE TABLE IF NOT EXISTS ValidateUser(
-Nickname VARCHAR(255) NOT NULL,
-ActivationCode VARCHAR(255) NOT NULL,
-PRIMARY KEY(`Nickname`)
+  Nickname VARCHAR(255) NOT NULL,
+  ActivationCode VARCHAR(255) NOT NULL,
+  PRIMARY KEY(`Nickname`)
 );
 
 CREATE TABLE Message (

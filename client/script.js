@@ -463,7 +463,7 @@ function checkUserPrinter() {
     } else if(printer.checked == true) {
         isPrinter = true;
     } else {
-        alertMessage("Per completare l'iscrizione seleziona una tipologia di utente");
+        alertMessage("Per completare l'iscrizione seleziona una tipologia di account");
         return false;
     }
     return true;
