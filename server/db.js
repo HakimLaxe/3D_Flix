@@ -21,8 +21,15 @@ connection.connect(function(err) {
 
 const createUser = function (row) {
 
-    return { username: row.Nickname, password: row.PasswordHash, name: row.Name, surname: row.Surname, mail: row.Mail, city: row.City, prov: row.Prov };
+    return { username: row.Nickname, password: row.PasswordHash, name: row.Name, surname: row.Surname, mail: row.Mail, type: row.Type, /*city: row.City, prov: row.Prov*/ };
 }
+
+/*
+const createPrinter = function (row) {
+
+    return { username: row.Nickname, password: row.PasswordHash, name: row.Name, surname: row.Surname, mail: row.Mail, type: row.Type, city: row.City, prov: row.Prov };
+}
+*/
 
 const createMessages = function (rows) {
 
@@ -51,7 +58,29 @@ function getUser(username) {
     });
 };
 
-function verifySiginCredential (username, mail) {
+/*
+function getPrinter(username) {
+    return new Promise((resolve, reject) => {
+        let sql = 'SELECT * FROM Printer WHERE Nickname = ?';
+        
+        connection.query(sql, [username] ,function (err, result) {
+            if (err) {
+                console.log(err);
+                reject(err);
+            }
+            if (result.length === 0 ){
+                resolve(undefined);
+            }
+            else {
+                const user = createPrinter(result[0]);
+                resolve(user);    
+            }
+        });
+    });
+};
+*/
+
+function verifySiginCredential (username, mail) {       //USER
     return new Promise((resolve, reject) => {
         let sql = 'SELECT * FROM User WHERE Nickname = ? OR Mail = ?';
         
@@ -70,7 +99,28 @@ function verifySiginCredential (username, mail) {
     });
 };
 
-function insertUser (name, surname, username, password, mail, city, prov) {
+/*
+function verifySiginCredential (username, mail) {       //PRINTER
+    return new Promise((resolve, reject) => {
+        let sql = 'SELECT * FROM Printer WHERE Nickname = ? OR Mail = ?';
+        
+        connection.query(sql, [username, mail] ,function (err, result) {
+            if (err) {
+                console.log(err);
+                reject(err);
+            }
+            if (result.length === 0 ){
+                resolve(true);
+            }
+            else {
+                resolve(false);    
+            }
+        });
+    });
+};
+*/
+
+function insertUser (name, surname, username, password, mail, /*city, prov*/) {
     return new Promise((resolve, reject) => {
         let sql = 'INSERT INTO User(Name,Surname, NickName, PasswordHash, Mail, City, Prov) VALUES(?,?,?,?,?,?,?)';
         
@@ -85,6 +135,24 @@ function insertUser (name, surname, username, password, mail, city, prov) {
         });
     });
 };
+
+/*
+function insertPrinter (name, surname, username, password, mail, city, prov) {
+    return new Promise((resolve, reject) => {
+        let sql = 'INSERT INTO Printer(Name,Surname, NickName, PasswordHash, Mail, City, Prov) VALUES(?,?,?,?,?,?,?)';
+        
+        connection.query(sql, [name, surname, username, password, mail, city, prov] ,function (err, result) {
+            if (err) {
+                console.log(err);
+                reject(err);
+            }
+            else {
+                resolve(true);    
+            }
+        });
+    });
+};
+*/
 
 function insertValidateUser (username, activationCode){
     return new Promise((resolve, reject) => {
@@ -103,7 +171,26 @@ function insertValidateUser (username, activationCode){
     });
 };
 
-function getValidationCode (username){
+/*
+function insertValidatePrinter (username, activationCode){
+    return new Promise((resolve, reject) => {
+        let sql = 'INSERT INTO ValidatePrinter(Nickname, ActivationCode) VALUES(?,?)';
+        
+        connection.query(sql, [username, activationCode] ,function (err, result) {
+            if (err) {
+                console.log(err);
+                reject(err);
+            }
+
+            else {
+                resolve(true);    
+            }
+        });
+    });
+};
+*/
+
+function getValidationCode/*User*/ (username){
     return new Promise((resolve, reject) => {
         let sql = 'SELECT * FROM ValidateUser WHERE Nickname = ?';
         
@@ -122,6 +209,27 @@ function getValidationCode (username){
     });
 };
 
+/*
+function getValidationCode (username){
+    return new Promise((resolve, reject) => {
+        let sql = 'SELECT * FROM ValidatePrinter WHERE Nickname = ?';
+        
+        connection.query(sql, [username] ,function (err, result) {
+            if (err) {
+                console.log(err);
+                reject(err);
+            }
+            if (result.length === 0 ){
+                resolve(false);
+            }
+            else {
+                resolve(result[0].ActivationCode);    
+            }
+        });
+    });
+};
+*/
+
 function deleteValidatedUser (username){
     return new Promise((resolve, reject) => {
         let sql = 'DELETE FROM ValidateUser WHERE Nickname = ?'
@@ -137,6 +245,24 @@ function deleteValidatedUser (username){
         });
     });
 };
+
+/*
+function deleteValidatedPrinter (username){
+    return new Promise((resolve, reject) => {
+        let sql = 'DELETE FROM ValidatePrinter WHERE Nickname = ?'
+        
+        connection.query(sql, [username] ,function (err, result) {
+            if (err) {
+                console.log(err);
+                reject(err);
+            }
+            else
+                resolve(true);
+
+        });
+    });
+};
+*/
 
 function updateMail (username, mail){
     return new Promise((resolve, reject) => {

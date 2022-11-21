@@ -18,6 +18,28 @@ CREATE TABLE IF NOT EXISTS User(
 );
 
 /*
+CREATE TABLE IF NOT EXISTS UserInfo(
+  userID int,
+  userType ENUM('Studente', 'Azienda', 'Hobbista') NOT NULL,
+  City VARCHAR(255) NOT NULL,
+  Prov VARCHAR(255) NOT NULL,
+  PRIMARY KEY(userID),
+  FOREIGN KEY('userID') REFERENCES User(userID)
+);
+*/
+
+/*
+CREATE TABLE IF NOT EXISTS PrinterInfo(
+  printerID int,
+  userType ENUM('Privato', 'Azienda', 'Laboratorio') NOT NULL,
+  City VARCHAR(255) NOT NULL,
+  Prov VARCHAR(255) NOT NULL,
+  PRIMARY KEY(printerID),
+  FOREIGN KEY('printerID') REFERENCES Printer(printerID)
+);
+*/
+
+/*
 CREATE TABLE IF NOT EXISTS Printer(
   printerID INTEGER AUTO_INCREMENT,
   Name VARCHAR(255) NOT NULL,
@@ -53,7 +75,7 @@ CREATE TABLE Message (
   ibanPay CHAR(27) NOT NULL,
   PRIMARY KEY('ibanPay'),
   printerID int,
-  FOREIGN KEY(printerID) REFERENCES Printers(printerID) 
+  FOREIGN KEY(printerID) REFERENCES Printer(printerID) 
 );
 
 CREATE TABLE IF NOT EXISTS PrinterPPInfo(

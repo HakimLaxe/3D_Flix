@@ -2,7 +2,7 @@
 //import express
 const express = require('express');
 const morgan = require('morgan'); // logging middleware
-const cors = require('cors')
+const cors = require('cors');
 const jwt = require('express-jwt');
 const jsonwebtoken = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
@@ -58,6 +58,42 @@ app.post('/api/login', (req, res) => {
     );
 });
 
+/*
+app.post('/api/login', (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+
+  db.getPrinter(username)
+    .then((printer) => {
+      if(user === undefined) {
+          res.status(404).send({
+              errors: [{ 'param': 'Server', 'msg': 'Invalid user' }] 
+            });
+      } else {
+          db.checkPassword(user, password).then( result => {
+              if (!result){
+                res.status(401).send({
+                  errors: [{ 'param': 'Server', 'msg': 'Wrong password' }] 
+                });
+              }
+              else {
+                //AUTHENTICATION SUCCESS
+                const token = jsonwebtoken.sign({ printer: printer.Username }, jwtSecret, {expiresIn: expireTime});
+                res.cookie('token', token, { httpOnly: true, sameSite: true, maxAge: 1000*expireTime });
+                res.json({username: printer.username});
+            }
+          }) 
+      } 
+    }).catch(
+      // Delay response when wrong user/pass is sent to avoid fast guessing attempts
+      (err) => {
+          new Promise((resolve) => {setTimeout(resolve, 1000)}).then(() => res.status(401).json(authErrorObj))
+
+      }
+    );
+});
+*/
+
 app.post('/api/sigin', (req, res) => {
   
   const username = req.body.username;
@@ -65,13 +101,14 @@ app.post('/api/sigin', (req, res) => {
   const name = req.body.name;
   const surname = req.body.surname;
   const mail = req.body.mail;
-  const city = req.body.city;
-  const prov = req.body.prov;
+  const type = req.body.type;
+  //const city = req.body.city;
+  //const prov = req.body.prov;
 
   db.verifySiginCredential(username, mail).then((result) => {
       if (result){
           let passwordHash = db.encryptPassword(password);
-          db.insertUser(name, surname, username, passwordHash, mail, city, prov)
+          db.insertUser(name, surname, username, passwordHash, mail, type /*city, prov*/)
             .then( () => {
               let code = mailHandler.sendMail(mail, username);
               db.insertValidateUser(username,code).then( (insertReturnValue) => {
@@ -96,6 +133,47 @@ app.post('/api/sigin', (req, res) => {
 
 });
 
+/*
+app.post('/api/sigin', (req, res) => {
+  
+  const username = req.body.username;
+  const password = req.body.password;
+  const name = req.body.name;
+  const surname = req.body.surname;
+  const mail = req.body.mail;
+  const type = req.body.type;
+  //const city = req.body.city;
+  //const prov = req.body.prov;
+
+  db.verifySiginCredential(username, mail).then((result) => {
+      if (result){
+          let passwordHash = db.encryptPassword(password);
+          db.insertPrinter(name, surname, username, passwordHash, mail, type, city, prov)
+            .then( () => {
+              let code = mailHandler.sendMail(mail, username);
+              db.insertValidatePrinter(username,code).then( (insertReturnValue) => {
+                res.json(insertReturnValue);
+              });
+            })
+            .catch( (err) => {
+              console.log(err);
+              res.status(500).json({
+                errors: [{'msg': err}],
+             });
+            });  
+      }
+  })
+  .catch(
+    // Delay response when wrong user/pass is sent to avoid fast guessing attempts
+    (err) => {
+        console.log("Error Catched in /api/sigin")
+        new Promise((resolve) => {setTimeout(resolve, 1000)}).then(() => res.status(401).json(authErrorObj))
+    }
+  );
+
+});
+*/
+
 app.get('/api/verifyUser/:user', (req,res) => {
   db.getValidationCode(req.params.user)
     .then( code => {
@@ -107,6 +185,20 @@ app.get('/api/verifyUser/:user', (req,res) => {
         }
     });
 });
+
+/*
+app.get('/api/verifyPrinter/:printer', (req,res) => {
+  db.getValidationCode(req.params.printer)
+    .then( code => {
+        if (!code){
+          res.json({"verification": true});
+        }
+        else{
+          res.json({"verification": false});
+        }
+    });
+});
+*/
 
 app.get('/api/verificationRequest/:user/:code', (req,res) => {
   db.getValidationCode(req.params.user)
@@ -123,6 +215,24 @@ app.get('/api/verificationRequest/:user/:code', (req,res) => {
         }
     })
 });
+
+/*
+app.get('/api/verificationRequest/:printer/:code', (req,res) => {
+  db.getValidationCode(req.params.printer)
+    .then( code => {
+        if ( code == req.params.code ){
+          db.deleteValidatedPrinter(req.params.printer)
+            .then( deleteResult => {
+              if (deleteResult)
+              res.json({"verificationRequest": true});
+            });
+        }
+        else{
+          res.json({"verificationRequest": false});
+        }
+    })
+});
+*/
 
 app.use(cookieParser());
 

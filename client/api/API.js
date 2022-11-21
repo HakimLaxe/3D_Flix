@@ -40,14 +40,14 @@ async function userLogout(username, password) {
     });
 }
 
-async function userSigin(username, password, mail, name, surname, city, prov) {
+async function userSigin(username, password, mail, name, surname, type,/* city, prov*/) {
     return new Promise((resolve, reject) => {
         fetch(url + '/api/sigin', {  
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({username: username, password: password, name: name, surname: surname, mail: mail, city: city, prov: prov})
+            body: JSON.stringify({username: username, password: password, name: name, surname: surname, mail: mail, type: type, /*city: city, prov: prov*/})
         }).then((response) => {
             if (response.ok) {
                 response.json().then((user) => {

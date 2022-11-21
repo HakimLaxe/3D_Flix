@@ -199,8 +199,8 @@ function checkPasswords(password,repassword){
     return true;
 }
 
-function checkSiginFields(name,surname,email,username,password,repassword,city,prov){
-    if ( name.length == 0 || surname.length == 0 || email.length == 0 || username.length == 0 || password.length == 0 || repassword.length == 0 || city.length == 0 || prov.length == 0 ){
+function checkSiginFields(name,surname,email,username,password,repassword){
+    if ( name.length == 0 || surname.length == 0 || email.length == 0 || username.length == 0 || password.length == 0 || repassword.length == 0 /*|| city.length == 0 || prov.length == 0 */){
             alertMessage("Riempi tutti i campi");                                                       
             return false;
     }
@@ -222,6 +222,7 @@ function clearSiginFields(){
     document.getElementById("signUsername").value = '';
     document.getElementById("signPassword").value = '';
     document.getElementById("signRePassword").value = '';
+    document.getElementsByName("btnradio").values = '';
     //document.getElementById("signCity").value = '';
     //document.getElementById("signProvince").value = '';
 }
@@ -233,11 +234,12 @@ function submitSigin(){
     let signUsername = document.getElementById("signUsername").value;
     let signPassword = document.getElementById("signPassword").value;
     let signRePassword = document.getElementById("signRePassword").value;
+    let signType = document.getElementsByName("btnradio").values;
+    let signBox = document.getElementsByName("signBox").checked;
     //let signCity = document.getElementById("signCity").value;
     //let signProvince = document.getElementById("signProvince").value;
-    let signBox = document.getElementById("signBox").checked;
 
-    if ( !checkSiginFields(signName,signSurname,signEmail,signUsername,signPassword,signRePassword,signCity,signProvince) ){
+    if ( !checkSiginFields(signName,signSurname,signEmail,signUsername,signPassword,signRePassword,signType,/*signCity,signProvince*/) ){
         clearSiginFields();
         return;
     }
@@ -282,7 +284,7 @@ function submitSigin(){
         return;
     }
     
-    userSigin(signUsername,signPassword,signEmail,signName,signSurname,signCity,signProvince)
+    userSigin(signUsername,signPassword,signEmail,signName,signSurname,signType,/*signCity,signProvince*/)
         .then(
             (response) => { 
                 console.log(response);
