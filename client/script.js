@@ -222,8 +222,8 @@ function clearSiginFields(){
     document.getElementById("signUsername").value = '';
     document.getElementById("signPassword").value = '';
     document.getElementById("signRePassword").value = '';
-    document.getElementById("signCity").value = '';
-    document.getElementById("signProvince").value = '';
+    //document.getElementById("signCity").value = '';
+    //document.getElementById("signProvince").value = '';
 }
 
 function submitSigin(){
@@ -233,8 +233,8 @@ function submitSigin(){
     let signUsername = document.getElementById("signUsername").value;
     let signPassword = document.getElementById("signPassword").value;
     let signRePassword = document.getElementById("signRePassword").value;
-    let signCity = document.getElementById("signCity").value;
-    let signProvince = document.getElementById("signProvince").value;
+    //let signCity = document.getElementById("signCity").value;
+    //let signProvince = document.getElementById("signProvince").value;
     let signBox = document.getElementById("signBox").checked;
 
     if ( !checkSiginFields(signName,signSurname,signEmail,signUsername,signPassword,signRePassword,signCity,signProvince) ){
@@ -266,8 +266,8 @@ function submitSigin(){
         clearSiginFields();
         return;
     }
-
-     if ( !checkCity(signCity) ){
+    /*
+    if ( !checkCity(signCity) ){
         clearSiginFields();
         return;
     }
@@ -276,7 +276,7 @@ function submitSigin(){
         clearSiginFields();
         return;
     }
-
+    */
     if ( !checkCheckBox(signBox) ){
         clearSiginFields();
         return;
@@ -453,8 +453,8 @@ function submitPPInfo() {
 //Possibile controllo per la differenza USER/PRINTER
 function checkUserPrinter() {
 
-    let user = document.getElementById("rdbtnUser");
-    let printer = document.getElementById("rdbtnPrinter");
+    let user = document.getElementById("rdbtnUser").value;
+    let printer = document.getElementById("rdbtnPrinter").value;
     const isUser = false;
     const isPrinter = false;
 
